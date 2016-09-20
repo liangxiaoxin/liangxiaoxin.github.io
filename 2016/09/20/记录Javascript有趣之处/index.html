@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2016/9 | 梁小新blog</title>
+  <title>记录Javascript有趣之处 | 梁小新blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -191,87 +191,65 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>The people who are crazy enough to think they can change the world are the ones who do.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/09/20/记录Javascript有趣之处/">记录Javascript有趣之处</a></h4>
-                            
-                            <p><time datetime="2016-09-19T16:52:06.000Z"><a href="/2016/09/20/记录Javascript有趣之处/">2016-09-20</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/09/17/我爱高圆圆/">我爱高圆圆</a></h4>
-                            
-                            <p><time datetime="2016-09-17T13:25:29.000Z"><a href="/2016/09/17/我爱高圆圆/">2016-09-17</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/09/13/HTML-CSS重点总结/">HTML+CSS重点总结</a></h4>
-                            
-                            <p><time datetime="2016-09-13T14:07:21.000Z"><a href="/2016/09/13/HTML-CSS重点总结/">2016-09-13</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-09-19T16:52:06.000Z" itemprop="datePublished">
+          2016-09-20
+      </time>
+    
+</span>
+                <h1>记录Javascript有趣之处</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<p><code>&#x5728;Javascript&#x4E16;&#x754C;&#x4E2D;&#xFF0C;&#x4E07;&#x7269;&#x7686;&#x5BF9;&#x8C61;&#x3002;</code></p>
+<p>&#x5B66;&#x4E60;&#x4E4B;&#x4F59;&#xFF0C;&#x8FC7;&#x4E8E;&#x6C89;&#x95F7;&#xFF0C;&#x5728;&#x6B64;&#x8BB0;&#x5F55;&#x4E00;&#x4E9B;Js&#x597D;&#x73A9;&#x6709;&#x8DA3;&#x7684;&#x7528;&#x6CD5;&#xFF0C;&#x6709;&#x52A9;&#x4E8E;&#x953B;&#x70BC;&#x81EA;&#x6211;&#x903B;&#x8F91;&#x3002; </p>
+<h3 id="&#x6570;&#x5B57;&#x4EA4;&#x6362;&#x4E0D;&#x58F0;&#x660E;&#x4E2D;&#x95F4;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x6CD5;"><a href="#&#x6570;&#x5B57;&#x4EA4;&#x6362;&#x4E0D;&#x58F0;&#x660E;&#x4E2D;&#x95F4;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x6CD5;" class="headerlink" title="&#x6570;&#x5B57;&#x4EA4;&#x6362;&#x4E0D;&#x58F0;&#x660E;&#x4E2D;&#x95F4;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x6CD5;"></a>&#x6570;&#x5B57;&#x4EA4;&#x6362;&#x4E0D;&#x58F0;&#x660E;&#x4E2D;&#x95F4;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x6CD5;</h3><p>&#x4E24;&#x4E2A;&#x6570;&#x5B57;&#x4E4B;&#x95F4;&#x505A;&#x4EA4;&#x6362;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x5148;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x53D8;&#x91CF;z&#xFF0C;&#x6765;&#x770B;&#x770B;&#x4E0B;&#x9762;&#x8FD9;&#x79CD;&#x5947;&#x8469;&#x7684;&#x505A;&#x6CD5;&#xFF1A;</p>
+<pre><code>var a=1,b=2;a=[b,b=a][0];
+console.log(&apos;a:&apos;+a+&apos;,b:&apos;+b);
+//&#x8F93;&#x51FA;a:2,b:1 
+</code></pre><p>&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x8FC7;&#x763E;&#xFF1F;&#x6709;&#x79CD;&#x8C41;&#x7136;&#x5F00;&#x6717;&#x7684;&#x611F;&#x89C9;&#x3002;</p>
+<h3 id="js&#x6574;&#x6570;&#x7684;&#x64CD;&#x4F5C;"><a href="#js&#x6574;&#x6570;&#x7684;&#x64CD;&#x4F5C;" class="headerlink" title="js&#x6574;&#x6570;&#x7684;&#x64CD;&#x4F5C;"></a>js&#x6574;&#x6570;&#x7684;&#x64CD;&#x4F5C;</h3><p>&#x4F7F;&#x7528; |0 &#x548C; ~~&#x53EF;&#x4EE5;&#x5C06;&#x6D6E;&#x70B9;&#x8F6C;&#x6210;&#x6574;&#x578B;&#x4E14;&#x6548;&#x7387;&#x65B9;&#x9762;&#x8981;&#x6BD4;&#x540C;&#x7C7B;&#x7684;parseInt,Math.round &#x8981;&#x5FEB;,&#x5728;&#x5904;&#x7406;&#x50CF;&#x7D20;&#x53CA;&#x52A8;&#x753B;&#x4F4D;&#x79FB;&#x7B49;&#x6548;&#x679C;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5F88;&#x6709;&#x7528;&#x3002; </p>
+<pre><code>var foo = (12.4 / 4.13) | 0;//&#x7ED3;&#x679C;&#x4E3A;3
+var bar = ~~(12.4 / 4.13);//&#x7ED3;&#x679C;&#x4E3A;3 
+</code></pre><p>&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x5C0F;&#x6280;&#x5DE7;&#xFF0C;&#x5C31;&#x662F; !! 2&#x4E2A;&#x53F9;&#x53F7;&#xFF0C;&#x5FEB;&#x901F;&#x8F6C;&#x5316;&#x4E3A;&#x5E03;&#x5C14;&#x503C;&#x3002;</p>
+<pre><code>var eee=&quot;eee&quot;;
+alert(!!eee)
+</code></pre>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2016/09/17/我爱高圆圆/">
+        我爱高圆圆 →
+    </a>
+    
+</nav>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>那些疯狂到以为自己能够改变世界的人，才能真正改变世界。</p>
-        </div>
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/09/20/记录Javascript有趣之处/" data-title="记录Javascript有趣之处" data-url="http://yoursite.com/2016/09/20/记录Javascript有趣之处/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
