@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>梁小新blog</title>
+  <title>Javascript中注意之处 | 梁小新blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -191,243 +191,75 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>The people who are crazy enough to think they can change the world are the ones who do.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-<!-- ============================ Content =========================== -->
-
+      
 <section id="intro">
     <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/09/25/Javascript中注意之处/">Javascript中注意之处</a></h3>
-                    <span>
-                        <span class="post-meta">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
       <time datetime="2016-09-25T13:19:04.000Z" itemprop="datePublished">
           2016-09-25
       </time>
     
 </span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        &#x8BB0;&#x5F55;&#x4E00;&#x4E9B;&#x5B66;&#x4E60;Javasrcipt&#x4E2D;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;&#x5173;&#x4E8E;NAN NaN&#x8FD9;&#x4E2A;&#x7279;&#x6B8A;&#x7684;Number&#x4E0E;&#x6240;&#x6709;&#x5176;&#x4E
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/09/25/Javascript中注意之处/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
+                <h1>Javascript中注意之处</h1>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/09/20/记录Javascript有趣之处/">记录Javascript有趣之处</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-09-19T16:52:06.000Z" itemprop="datePublished">
-          2016-09-20
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        &#x5728;Javascript&#x4E16;&#x754C;&#x4E2D;&#xFF0C;&#x4E07;&#x7269;&#x7686;&#x5BF9;&#x8C61;&#x3002;
-&#x5B66;&#x4E60;&#x4E4B;&#x4F59;&#xFF0C;&#x8FC7;&#x4E8E;&#x6C89;&#x95F7;&#xFF0C;&#x5728;&#x6B64;&#x8BB0;&#x5F55;&#x4E00;&
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/09/20/记录Javascript有趣之处/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="&#x8BB0;&#x5F55;&#x4E00;&#x4E9B;&#x5B66;&#x4E60;Javasrcipt&#x4E2D;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;"><a href="#&#x8BB0;&#x5F55;&#x4E00;&#x4E9B;&#x5B66;&#x4E60;Javasrcipt&#x4E2D;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;" class="headerlink" title="&#x8BB0;&#x5F55;&#x4E00;&#x4E9B;&#x5B66;&#x4E60;Javasrcipt&#x4E2D;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;"></a>&#x8BB0;&#x5F55;&#x4E00;&#x4E9B;&#x5B66;&#x4E60;Javasrcipt&#x4E2D;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;</h2><h6 id="&#x5173;&#x4E8E;NAN"><a href="#&#x5173;&#x4E8E;NAN" class="headerlink" title="&#x5173;&#x4E8E;NAN"></a>&#x5173;&#x4E8E;NAN</h6><p> NaN&#x8FD9;&#x4E2A;&#x7279;&#x6B8A;&#x7684;Number&#x4E0E;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x503C;&#x90FD;&#x4E0D;&#x76F8;&#x7B49;&#xFF0C;&#x5305;&#x62EC;&#x5B83;&#x81EA;&#x5DF1;&#xFF1A;</p>
+<pre><code>NaN === NaN; // false
+</code></pre><p>&#x552F;&#x4E00;&#x80FD;&#x5224;&#x65AD;NaN&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x901A;&#x8FC7;isNaN()&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code>isNaN(NaN); // true
+</code></pre><h6 id="&#x6D6E;&#x70B9;&#x6570;&#x7684;&#x6BD4;&#x8F83;"><a href="#&#x6D6E;&#x70B9;&#x6570;&#x7684;&#x6BD4;&#x8F83;" class="headerlink" title="&#x6D6E;&#x70B9;&#x6570;&#x7684;&#x6BD4;&#x8F83;"></a>&#x6D6E;&#x70B9;&#x6570;&#x7684;&#x6BD4;&#x8F83;</h6><pre><code>1 / 3 == (1 - 2 / 3); // false
+1 / 3 === (1 - 2 / 3); // false
+Math.abs(1 / 3 - (1 - 2 / 3)) &lt; 0.0000001; // true
+</code></pre><h6 id="&#x5173;&#x4E8E;&#x7A7A;"><a href="#&#x5173;&#x4E8E;&#x7A7A;" class="headerlink" title="&#x5173;&#x4E8E;&#x7A7A;"></a>&#x5173;&#x4E8E;&#x7A7A;</h6><ul>
+<li>null&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x201C;&#x7A7A;&#x201D;&#x7684;&#x503C;&#xFF1B; </li>
+<li>0&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#xFF1B; </li>
+<li>&#x2018;&#x2019;&#x8868;&#x793A;&#x957F;&#x5EA6;&#x4E3A;0&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF1B; </li>
+<li>null&#x8868;&#x793A;&#x201C;&#x7A7A;&#x201D;&#xFF1B; </li>
+<li>undefined&#x8868;&#x793A;&#x503C;&#x672A;&#x5B9A;&#x4E49;&#x3002;</li>
+</ul>
+<p>&#x5173;&#x4E8E;&#x6700;&#x540E;&#x4E24;&#x8005;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x5E94;&#x8BE5;&#x7528;null&#x3002;undefined&#x4EC5;&#x4EC5;&#x5728;&#x5224;&#x65AD;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x662F;&#x5426;&#x4F20;&#x9012;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6709;&#x7528;&#x3002;</p>
+<h6 id="&#x5B57;&#x7B26;&#x4E32;"><a href="#&#x5B57;&#x7B26;&#x4E32;" class="headerlink" title="&#x5B57;&#x7B26;&#x4E32;"></a>&#x5B57;&#x7B26;&#x4E32;</h6><p>&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x67D0;&#x4E2A;&#x7D22;&#x5F15;&#x8D4B;&#x503C;&#xFF0C;&#x4E0D;&#x4F1A;&#x6709;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x6548;&#x679C;&#xFF1A;</p>
+<pre><code>var s = &apos;Test&apos;;
+s[0] = &apos;X&apos;;
+alert(s); // s&#x4ECD;&#x7136;&#x4E3A;&apos;Test&apos;
+</code></pre><p>JavaScript&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x8C03;&#x7528;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x672C;&#x8EAB;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x539F;&#x6709;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x800C;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>&#x65B0;&#x5B57;&#x7B26;&#x4E32;</code>&#x3002;</p>
+<h6 id="&#x6570;&#x7EC4;"><a href="#&#x6570;&#x7EC4;" class="headerlink" title="&#x6570;&#x7EC4;"></a>&#x6570;&#x7EC4;</h6><p>Array&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x628A;&#x5BF9;&#x5E94;&#x7684;&#x5143;&#x7D20;&#x4FEE;&#x6539;&#x4E3A;&#x65B0;&#x7684;&#x503C;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5BF9;Array&#x7684;&#x7D22;&#x5F15;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x4F1A;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;Array&#xFF1A;</p>
+<pre><code>var arr = [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;];
+arr[1] = 99;
+arr; // arr&#x73B0;&#x5728;&#x53D8;&#x4E3A;[&apos;A&apos;, 99, &apos;C&apos;]
+</code></pre>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/09/17/我爱高圆圆/">我爱高圆圆</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-09-17T13:25:29.000Z" itemprop="datePublished">
-          2016-09-17
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        &#x6211;&#x7231;&#x5706;&#x5706; 
-
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/09/17/我爱高圆圆/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/09/13/HTML-CSS重点总结/">HTML+CSS重点总结</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-09-13T14:07:21.000Z" itemprop="datePublished">
-          2016-09-13
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        &#x590D;&#x4E60;&#x662F;&#x7CBE;&#x534E;&#x3002;&#x2014;&#x2014;&#x8FFD;&#x547D;
-&#x5143;&#x7D20;&#x7684;&#x5206;&#x7C7B;
-&#x884C;&#x5185;&#x5143;&#x7D20;( inline ):a b  strong del em ins span
-&#x884C;&#x5185;&#x5757;&#x
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/09/13/HTML-CSS重点总结/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/08/10/first-test/">first-test</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-08-10T08:49:07.000Z" itemprop="datePublished">
-          2016-08-10
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        &#x6211;&#x662F;&#x53F6;&#x826F;&#x8FB0;&#xFF0C;&#x6211;&#x6765;&#x8BD5;&#x8BD5;blog
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/08/10/first-test/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/08/10/hello-world/">Hello World</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-08-10T06:25:48.000Z" itemprop="datePublished">
-          2016-08-10
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new p
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/08/10/hello-world/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
         <nav class="pagination" role="pagination">
-          
-          
-        </nav>
+    
+    
+    <a class="pull-right" href="/2016/09/20/记录Javascript有趣之处/">
+        记录Javascript有趣之处 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/09/25/Javascript中注意之处/" data-title="Javascript中注意之处" data-url="http://yoursite.com/2016/09/25/Javascript中注意之处/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>那些疯狂到以为自己能够改变世界的人，才能真正改变世界。</p>
-        </div>
-    </div>
-</section>
-<!-- ============================ END Content =========================== -->
+
 
       
 <!-- ============================ Footer =========================== -->
