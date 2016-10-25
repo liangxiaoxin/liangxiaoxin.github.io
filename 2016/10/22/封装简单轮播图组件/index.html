@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>记录遇到的兼容性问题 | 梁小新blog</title>
+  <title>原生JS封装简单轮播图 | 梁小新blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -197,118 +197,135 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2016-10-08T03:39:06.000Z" itemprop="datePublished">
-          2016-10-08
+      <time datetime="2016-10-22T13:31:56.000Z" itemprop="datePublished">
+          2016-10-22
       </time>
     
 </span>
-                <h1>记录遇到的兼容性问题</h1>
+                <h1>原生JS封装简单轮播图</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h4 id="&#x900F;&#x660E;&#x5EA6;-opacity"><a href="#&#x900F;&#x660E;&#x5EA6;-opacity" class="headerlink" title="&#x900F;&#x660E;&#x5EA6; opacity"></a>&#x900F;&#x660E;&#x5EA6; opacity</h4><pre><code>//&#x9AD8;&#x7EA7;&#x6D4F;&#x89C8;&#x5668;&#x4E0B;&#x76F4;&#x63A5;&#x7528; opacity = xx;
-opacity = 0.3; //&#x900F;&#x660E;&#x5EA6;0.3 &#x53D6;&#x503C;&#x8303;&#x56F4;0~1&#xFF1B;
-
-//&#x517C;&#x5BB9;IE8&#x53CA;&#x4E4B;&#x524D;&#x7248;&#x672C;&#xFF1B;
-filter = alpha(opacity=30); //&#x900F;&#x660E;&#x5EA6;30% &#x53D6;&#x503C;&#x8303;&#x56F4;0~100%&#xFF1B;
-</code></pre><h4 id="&#x83B7;&#x5F97;&#x6807;&#x7B7E;&#x4E4B;&#x95F4;&#x7684;&#x6587;&#x672C;&#x4FE1;&#x606F;"><a href="#&#x83B7;&#x5F97;&#x6807;&#x7B7E;&#x4E4B;&#x95F4;&#x7684;&#x6587;&#x672C;&#x4FE1;&#x606F;" class="headerlink" title="&#x83B7;&#x5F97;&#x6807;&#x7B7E;&#x4E4B;&#x95F4;&#x7684;&#x6587;&#x672C;&#x4FE1;&#x606F;"></a>&#x83B7;&#x5F97;&#x6807;&#x7B7E;&#x4E4B;&#x95F4;&#x7684;&#x6587;&#x672C;&#x4FE1;&#x606F;</h4><pre><code>function getText(element){  
-        if(typeof element.innerText ==&quot;string&quot;){ // 0,NaN,&quot;&quot;,Null,undefined,false   
-            return element.innerText; // IE8&#x53CA;&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x7684;&#x65B9;&#x5F0F;
-        }else {
-            return  element.textContent;//&#x706B;&#x72D0;&#x7684;&#x65E9;&#x671F;&#x7248;&#x672C;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x7684;
+      		<h3 id="&#x8F6E;&#x64AD;&#x56FE;&#x662F;&#x7F51;&#x9875;&#x4E0A;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5728;&#x6B64;&#x5229;&#x7528;&#x539F;&#x751F;JS&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8F6E;&#x64AD;&#x56FE;&#x7EC4;&#x4EF6;&#xFF08;&#x6548;&#x679C;&#x7C7B;&#x4F3C;&#x4E8E;&#x6DD8;&#x5B9D;&#x9996;&#x9875;&#x8F6E;&#x64AD;&#x56FE;&#xFF09;&#x3002;"><a href="#&#x8F6E;&#x64AD;&#x56FE;&#x662F;&#x7F51;&#x9875;&#x4E0A;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5728;&#x6B64;&#x5229;&#x7528;&#x539F;&#x751F;JS&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8F6E;&#x64AD;&#x56FE;&#x7EC4;&#x4EF6;&#xFF08;&#x6548;&#x679C;&#x7C7B;&#x4F3C;&#x4E8E;&#x6DD8;&#x5B9D;&#x9996;&#x9875;&#x8F6E;&#x64AD;&#x56FE;&#xFF09;&#x3002;" class="headerlink" title="&#x8F6E;&#x64AD;&#x56FE;&#x662F;&#x7F51;&#x9875;&#x4E0A;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5728;&#x6B64;&#x5229;&#x7528;&#x539F;&#x751F;JS&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8F6E;&#x64AD;&#x56FE;&#x7EC4;&#x4EF6;&#xFF08;&#x6548;&#x679C;&#x7C7B;&#x4F3C;&#x4E8E;&#x6DD8;&#x5B9D;&#x9996;&#x9875;&#x8F6E;&#x64AD;&#x56FE;&#xFF09;&#x3002;"></a>&#x8F6E;&#x64AD;&#x56FE;&#x662F;&#x7F51;&#x9875;&#x4E0A;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5728;&#x6B64;&#x5229;&#x7528;&#x539F;&#x751F;JS&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8F6E;&#x64AD;&#x56FE;&#x7EC4;&#x4EF6;&#xFF08;&#x6548;&#x679C;&#x7C7B;&#x4F3C;&#x4E8E;&#x6DD8;&#x5B9D;&#x9996;&#x9875;&#x8F6E;&#x64AD;&#x56FE;&#xFF09;&#x3002;</h3><pre><code>&lt;div id=&quot;box&quot; class=&quot;all&quot;&gt;
+&lt;div class=&quot;ad&quot;&gt;
+    &lt;ul id=&quot;imgs&quot;&gt;
+        &lt;li&gt;&lt;img src=&quot;images/1.jpg&quot; width=&apos;500&apos; height=&apos;200&apos; alt=&quot;&quot;/&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;images/2.jpg&quot; width=&apos;500&apos; height=&apos;200&apos; alt=&quot;&quot;/&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;images/3.jpg&quot; width=&apos;500&apos; height=&apos;200&apos; alt=&quot;&quot;/&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;images/4.jpg&quot; width=&apos;500&apos; height=&apos;200&apos; alt=&quot;&quot;/&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src=&quot;images/5.jpg&quot; width=&apos;500&apos; height=&apos;200&apos; alt=&quot;&quot;/&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ol&gt;&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&quot;arr&quot;&gt;&lt;span id=&quot;left&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span id=&quot;right&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+</code></pre><p></p>
+<h5 id="1-&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8FD0;&#x52A8;&#x51FD;&#x6570;&#xFF08;&#x5F53;&#x7528;&#x6237;&#x89E6;&#x53D1;&#x67D0;&#x4EF6;&#x4E8B;&#x4EF6;&#x65F6;&#x8C03;&#x7528;&#xFF09;"><a href="#1-&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8FD0;&#x52A8;&#x51FD;&#x6570;&#xFF08;&#x5F53;&#x7528;&#x6237;&#x89E6;&#x53D1;&#x67D0;&#x4EF6;&#x4E8B;&#x4EF6;&#x65F6;&#x8C03;&#x7528;&#xFF09;" class="headerlink" title="1.&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8FD0;&#x52A8;&#x51FD;&#x6570;&#xFF08;&#x5F53;&#x7528;&#x6237;&#x89E6;&#x53D1;&#x67D0;&#x4EF6;&#x4E8B;&#x4EF6;&#x65F6;&#x8C03;&#x7528;&#xFF09;"></a>1.&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8FD0;&#x52A8;&#x51FD;&#x6570;&#xFF08;&#x5F53;&#x7528;&#x6237;&#x89E6;&#x53D1;&#x67D0;&#x4EF6;&#x4E8B;&#x4EF6;&#x65F6;&#x8C03;&#x7528;&#xFF09;</h5><pre><code>function animate(obj,target) {
+    clearInterval(obj.timeId);//&#x6BCF;&#x6B21;&#x70B9;&#x51FB;&#x4E86;&#x6309;&#x94AE;&#x4E4B;&#x540E;&#xFF0C;&#x5148;&#x6E05;&#x7A7A;&#x5B9A;&#x65F6;&#x5668;
+    obj.timeId = setInterval(function () {
+        var step = 20;
+        // &#x5148;&#x83B7;&#x5F97;demo&#x5BF9;&#x8C61;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;
+        var leader = obj.offsetLeft;//&#x5148;&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x7684;&#x8DDD;&#x79BB;&#x5DE6;&#x4FA7;&#x7684;&#x4F4D;&#x7F6E;
+        step = leader &lt; target ? step : -step;
+        if (Math.abs(leader - target) &gt; Math.abs(step)) {   // &#x8DDD;&#x79BB;&#x5927;&#x4E8E;step&#x65F6;&#x89E6;&#x53D1;
+            leader = leader + step; // &#x8D4B;&#x503C;
+            obj.style.left = leader + &apos;px&apos;; //&#x4E0D;&#x65AD;&#x79FB;&#x52A8;
+        } else {
+            clearInterval(obj.timeId);//&#x6E05;&#x7A7A;&#x5B9A;&#x65F6;&#x5668;
+            obj.style.left = target + &apos;px&apos;;//&#x624B;&#x52A8;&#x8BBE;&#x7F6E;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;
         }
-    }
-</code></pre><h4 id="&#x8BBE;&#x7F6E;&#x6807;&#x7B7E;&#x4E4B;&#x95F4;&#x7684;&#x6587;&#x672C;&#x4FE1;&#x606F;"><a href="#&#x8BBE;&#x7F6E;&#x6807;&#x7B7E;&#x4E4B;&#x95F4;&#x7684;&#x6587;&#x672C;&#x4FE1;&#x606F;" class="headerlink" title="&#x8BBE;&#x7F6E;&#x6807;&#x7B7E;&#x4E4B;&#x95F4;&#x7684;&#x6587;&#x672C;&#x4FE1;&#x606F;"></a>&#x8BBE;&#x7F6E;&#x6807;&#x7B7E;&#x4E4B;&#x95F4;&#x7684;&#x6587;&#x672C;&#x4FE1;&#x606F;</h4><pre><code>function setText(element,value){
-    // &#x6709;&#x65F6;&#x5019;&#x83B7;&#x5F97;&#x7684;&#x5185;&#x5BB9;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x201C;&#x201D;
-    if(typeof element.innerText ==&quot;string&quot;){ // IE8&#x53CA;&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x7684;&#x65B9;&#x5F0F;
-           element.innerText = value;
-    }else {
-        element.textContent = value;
+
+    }, 15);
+</code></pre><h5 id="2-&#x751F;&#x6210;&#x8F6E;&#x64AD;&#x56FE;&#x4E0A;&#x7684;&#x5C0F;&#x65B9;&#x5757;"><a href="#2-&#x751F;&#x6210;&#x8F6E;&#x64AD;&#x56FE;&#x4E0A;&#x7684;&#x5C0F;&#x65B9;&#x5757;" class="headerlink" title="2.&#x751F;&#x6210;&#x8F6E;&#x64AD;&#x56FE;&#x4E0A;&#x7684;&#x5C0F;&#x65B9;&#x5757;"></a>2.&#x751F;&#x6210;&#x8F6E;&#x64AD;&#x56FE;&#x4E0A;&#x7684;&#x5C0F;&#x65B9;&#x5757;</h5><pre><code>for(var i=0;i&lt;lis.length;i++){    //&#x56FE;&#x7247;&#x4E2A;&#x6570;&#x7684;&#x957F;&#x5EA6;
+    var li = document.createElement(&quot;li&quot;);
+    li.innerHTML = i+1;
+    ol.appendChild(li);
+}
+</code></pre><h5 id="3-&#x9F20;&#x6807;&#x79FB;&#x5230;&#x5C0F;&#x65B9;&#x5757;&#x4E0A;"><a href="#3-&#x9F20;&#x6807;&#x79FB;&#x5230;&#x5C0F;&#x65B9;&#x5757;&#x4E0A;" class="headerlink" title="3.&#x9F20;&#x6807;&#x79FB;&#x5230;&#x5C0F;&#x65B9;&#x5757;&#x4E0A;"></a>3.&#x9F20;&#x6807;&#x79FB;&#x5230;&#x5C0F;&#x65B9;&#x5757;&#x4E0A;</h5><pre><code>var pic = 0; //&#x56FE;&#x7247;&#x7684;&#x7D22;&#x5F15;
+var square = 0; //&#x5C0F;&#x65B9;&#x5757;&#x7684;&#x7D22;&#x5F15;
+//&#x5148;&#x8BA9;&#x7B2C;&#x4E00;&#x4E2A;&#x5C0F;&#x65B9;&#x5757;&#x989C;&#x8272;
+var olLis = ol.children;
+olLis[0].className=&apos;current&apos;;
+//onmouseover&#x4E8B;&#x4EF6;
+for(var i=0;i&lt;olLis.length;i++){
+    olLis[i].index = i;
+    olLis[i].onmouseover = function(){
+        for(var j=0;j&lt;olLis.length;j++){
+            olLis[j].className= &quot;&quot;; 
+        }
+        this.className = &quot;current&quot;;
+        // &#x9F20;&#x6807;&#x79FB;&#x5165;&#x5BF9;&#x5E94;&#x7684;&#x5C0F;&#x65B9;&#x5757;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x56FE;&#x7247;&#x79FB;&#x52A8;&#x5BF9;&#x5E94;&#x5C0F;&#x65B9;&#x5757;&#x7D22;&#x5F15;&#x4E2A;&#x56FE;&#x7247;&#x7684;&#x5BBD;&#x5EA6;
+        var target = -imgWidth*this.index;
+        animate(ul,target);
+        pic=square=this.index;
     }
 }
-</code></pre><h4 id="&#x83B7;&#x5F97;&#x6807;&#x7B7E;&#x8282;&#x70B9;&#xFF08;&#x5C01;&#x88C5;&#x5728;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#xFF09;"><a href="#&#x83B7;&#x5F97;&#x6807;&#x7B7E;&#x8282;&#x70B9;&#xFF08;&#x5C01;&#x88C5;&#x5728;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#xFF09;" class="headerlink" title="&#x83B7;&#x5F97;&#x6807;&#x7B7E;&#x8282;&#x70B9;&#xFF08;&#x5C01;&#x88C5;&#x5728;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#xFF09;"></a>&#x83B7;&#x5F97;&#x6807;&#x7B7E;&#x8282;&#x70B9;&#xFF08;&#x5C01;&#x88C5;&#x5728;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#xFF09;</h4><pre><code>//&#x83B7;&#x5F97;&#x4E0A;&#x4E00;&#x4E2A;&#x5144;&#x5F1F;&#x6807;&#x7B7E;&#x8282;&#x70B9;
-var elementNode = {
-getPreviousElement:function(element){
-    if(element.previousElementSibling){
-        return element.previousElementSibling;
-    }else {
-
-        var ele = element.previousSibling;
-        while(ele&amp;&amp;ele.nodeType !==1){
-            ele = ele.previousSibling;
-        }
-        return ele;
+</code></pre><h5 id="4-&#x9F20;&#x6807;&#x79FB;&#x5165;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x6309;&#x94AE;"><a href="#4-&#x9F20;&#x6807;&#x79FB;&#x5165;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x6309;&#x94AE;" class="headerlink" title="4.&#x9F20;&#x6807;&#x79FB;&#x5165;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x6309;&#x94AE;"></a>4.&#x9F20;&#x6807;&#x79FB;&#x5165;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x6309;&#x94AE;</h5><pre><code>//&#x9F20;&#x6807;&#x79FB;&#x5165;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x6309;&#x94AE;
+box.onmouseover = function(){
+    arr.style.display = &quot;block&quot;;
+    clearInterval(timerId);
+}
+box.onmouseout = function(){
+    arr.style.display=&quot;none&quot;;
+    timerId=setInterval(playNext,1000);
+}
+</code></pre><h5 id="4-&#x590D;&#x5236;&#x7B2C;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x5230;ul&#x6700;&#x540E;&#xFF08;&#x5DE7;&#x5999;&#x4E4B;&#x5904;&#xFF09;"><a href="#4-&#x590D;&#x5236;&#x7B2C;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x5230;ul&#x6700;&#x540E;&#xFF08;&#x5DE7;&#x5999;&#x4E4B;&#x5904;&#xFF09;" class="headerlink" title="4.&#x590D;&#x5236;&#x7B2C;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x5230;ul&#x6700;&#x540E;&#xFF08;&#x5DE7;&#x5999;&#x4E4B;&#x5904;&#xFF09;"></a>4.&#x590D;&#x5236;&#x7B2C;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x5230;ul&#x6700;&#x540E;&#xFF08;&#x5DE7;&#x5999;&#x4E4B;&#x5904;&#xFF09;</h5><pre><code>var firstLi = lis[0].cloneNode(true);
+ul.appendChild(firstLi);
+</code></pre><h5 id="5-&#x5DE6;&#x53F3;&#x6309;&#x94AE;&#x6CE8;&#x518C;&#x5355;&#x51FB;&#x4E8B;&#x4EF6;"><a href="#5-&#x5DE6;&#x53F3;&#x6309;&#x94AE;&#x6CE8;&#x518C;&#x5355;&#x51FB;&#x4E8B;&#x4EF6;" class="headerlink" title="5.&#x5DE6;&#x53F3;&#x6309;&#x94AE;&#x6CE8;&#x518C;&#x5355;&#x51FB;&#x4E8B;&#x4EF6;"></a>5.&#x5DE6;&#x53F3;&#x6309;&#x94AE;&#x6CE8;&#x518C;&#x5355;&#x51FB;&#x4E8B;&#x4EF6;</h5><pre><code>//&#x5C01;&#x88C5;&#x6210;playNext,&#x53EF;&#x590D;&#x7528;
+function playNext(){
+    if(pic==lis.length-1){
+        pic=0;
+        ul.style.left = &quot;0px&quot;;
     }
-},
-//&#x83B7;&#x5F97;&#x4E0B;&#x4E00;&#x4E2A;&#x5144;&#x5F1F;&#x6807;&#x7B7E;&#x8282;&#x70B9;
-getNextElement:function(element){
-    if(element.nextElementSibling){            
-        return element.nextElementSibling;
-    }else{ 
-        var ele = element.nextSibling;
-        while(ele &amp;&amp; ele.nodeType !==1){                 
-        ele= ele.nextSibling;
-        }
-        return ele; 
-    }
-},
-//&#x83B7;&#x5F97;&#x7B2C;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x8282;&#x70B9;
-getFirstElement:function(element){
-    if(element.firstElementChild){
-        return element.firstElementChild;  
+    pic++;
+    var target = -imgWidth*pic;
+    animate(ul,target);
+    if(square&lt;olLis.length-1){
+        square++;
     }else{
-        var ele =  element.firstChild;  
-        while(ele &amp;&amp; ele.nodeType !==1){
-            ele = ele.nextSibling;
-        }
-        return ele;
+        square=0;
     }
-},
-//&#x83B7;&#x5F97;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x8282;&#x70B9;
-getLastElement:function(element){
-    if(element.LastElementSibling){  
-        return element.LastElementSibling;
-        var ele = element.LastSibling;
-        while(ele &amp;&amp; ele.nodeType !==1){                 
-        ele= ele.LastSibling;
-        }
-        return ele; 
+    for(var j=0;j&lt;olLis.length;j++){
+        olLis[j].className=&apos;&apos;;
     }
+    olLis[square].className = &apos;current&apos;;
 }
-}
-</code></pre><h4 id="&#x83B7;&#x5F97;&#x5143;&#x7D20;&#x7684;&#x5C5E;&#x6027;&#x503C;"><a href="#&#x83B7;&#x5F97;&#x5143;&#x7D20;&#x7684;&#x5C5E;&#x6027;&#x503C;" class="headerlink" title="&#x83B7;&#x5F97;&#x5143;&#x7D20;&#x7684;&#x5C5E;&#x6027;&#x503C;"></a>&#x83B7;&#x5F97;&#x5143;&#x7D20;&#x7684;&#x5C5E;&#x6027;&#x503C;</h4><pre><code>function getStyle(obj,attr){
-    // &#x80FD;&#x529B;&#x68C0;&#x6D4B;
-    if(obj&amp;&amp;obj.currentStyle){
-        return  obj.currentStyle[attr];
+//&#x5DE6;&#x53F3;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;
+arrRight.onclick = playNext;    
+arrLeft.onclick = function(){
+    if(pic==0){
+        pic=lis.length-1;
+        ul.style.left=-imgWidth*(lis.length-1)+&apos;px&apos;;
+    }
+    pic--;
+    var target = -imgWidth*pic;
+    animate(ul,target);
+
+    if(square&gt;0){
+        square--;
     }else {
-        return  getComputedStyle(obj,null)[attr];
+        square = olLis.length-1;
     }
-}
-</code></pre><h4 id="scroll-&#x6EDA;&#x8F6E;&#x76D1;&#x63A7;"><a href="#scroll-&#x6EDA;&#x8F6E;&#x76D1;&#x63A7;" class="headerlink" title="scroll &#x6EDA;&#x8F6E;&#x76D1;&#x63A7;"></a>scroll &#x6EDA;&#x8F6E;&#x76D1;&#x63A7;</h4><pre><code>function scroll(){
-    return {   // &#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x5BF9;&#x8C61;&#x6CA1;&#x6709;&#x540D;&#x5B57;&#x800C;&#x5DF2;
-    scrollTop: window.pageYOffset || document.documentElement.scrollTop ||         document.body.scrollTop || 0,
-    scrollLeft: window.pageXOffset || document.documentElement.scrollLeft ||         document.body.scrollLeft || 0
+    for(var j=0;j&lt;olLis.length;j++){
+        olLis[j].className=&apos;&apos;;
     }
+    olLis[square].className = &apos;current&apos;;
 }
+</code></pre><h5 id="6-&#x5F00;&#x542F;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x81EA;&#x52A8;&#x8F6E;&#x64AD;"><a href="#6-&#x5F00;&#x542F;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x81EA;&#x52A8;&#x8F6E;&#x64AD;" class="headerlink" title="6.&#x5F00;&#x542F;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x81EA;&#x52A8;&#x8F6E;&#x64AD;"></a>6.&#x5F00;&#x542F;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x81EA;&#x52A8;&#x8F6E;&#x64AD;</h5><pre><code>timerId = setInterval(playNext,1000);    
 </code></pre>
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2016/10/22/封装简单轮播图组件/" style="float: left;">
-        ← 原生JS封装简单轮播图
-    </a>
     
-    
-    <a class="pull-right" href="/2016/09/29/你的命运不是一头骡子/">
-        你的命运不是一头骡子 →
+    <a class="pull-right" href="/2016/10/08/记录遇到的兼容性问题/">
+        记录遇到的兼容性问题 →
     </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/10/08/记录遇到的兼容性问题/" data-title="记录遇到的兼容性问题" data-url="http://yoursite.com/2016/10/08/记录遇到的兼容性问题/"></div>
+<div class="ds-thread" data-thread-key="2016/10/22/封装简单轮播图组件/" data-title="原生JS封装简单轮播图" data-url="http://yoursite.com/2016/10/22/封装简单轮播图组件/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"duoshuo_name"};
 (function() {
