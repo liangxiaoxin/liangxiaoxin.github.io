@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>原生JS封装简单轮播图 | 梁小新blog</title>
+  <title>分享一些前端开发中常用的JS代码片段 | 梁小新blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -197,139 +197,212 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2016-10-22T13:31:56.000Z" itemprop="datePublished">
-          2016-10-22
+      <time datetime="2016-10-26T12:02:03.000Z" itemprop="datePublished">
+          2016-10-26
       </time>
     
 </span>
-                <h1>原生JS封装简单轮播图</h1>
+                <h1>分享一些前端开发中常用的JS代码片段</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h3 id="&#x8F6E;&#x64AD;&#x56FE;&#x662F;&#x7F51;&#x9875;&#x4E0A;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5728;&#x6B64;&#x5229;&#x7528;&#x539F;&#x751F;JS&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8F6E;&#x64AD;&#x56FE;&#x7EC4;&#x4EF6;&#xFF08;&#x6548;&#x679C;&#x7C7B;&#x4F3C;&#x4E8E;&#x6DD8;&#x5B9D;&#x9996;&#x9875;&#x8F6E;&#x64AD;&#x56FE;&#xFF09;&#x3002;"><a href="#&#x8F6E;&#x64AD;&#x56FE;&#x662F;&#x7F51;&#x9875;&#x4E0A;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5728;&#x6B64;&#x5229;&#x7528;&#x539F;&#x751F;JS&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8F6E;&#x64AD;&#x56FE;&#x7EC4;&#x4EF6;&#xFF08;&#x6548;&#x679C;&#x7C7B;&#x4F3C;&#x4E8E;&#x6DD8;&#x5B9D;&#x9996;&#x9875;&#x8F6E;&#x64AD;&#x56FE;&#xFF09;&#x3002;" class="headerlink" title="&#x8F6E;&#x64AD;&#x56FE;&#x662F;&#x7F51;&#x9875;&#x4E0A;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5728;&#x6B64;&#x5229;&#x7528;&#x539F;&#x751F;JS&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8F6E;&#x64AD;&#x56FE;&#x7EC4;&#x4EF6;&#xFF08;&#x6548;&#x679C;&#x7C7B;&#x4F3C;&#x4E8E;&#x6DD8;&#x5B9D;&#x9996;&#x9875;&#x8F6E;&#x64AD;&#x56FE;&#xFF09;&#x3002;"></a>&#x8F6E;&#x64AD;&#x56FE;&#x662F;&#x7F51;&#x9875;&#x4E0A;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5728;&#x6B64;&#x5229;&#x7528;&#x539F;&#x751F;JS&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8F6E;&#x64AD;&#x56FE;&#x7EC4;&#x4EF6;&#xFF08;&#x6548;&#x679C;&#x7C7B;&#x4F3C;&#x4E8E;&#x6DD8;&#x5B9D;&#x9996;&#x9875;&#x8F6E;&#x64AD;&#x56FE;&#xFF09;&#x3002;</h3><pre><code>&lt;div id=&quot;box&quot; class=&quot;all&quot;&gt;
-&lt;div class=&quot;ad&quot;&gt;
-    &lt;ul id=&quot;imgs&quot;&gt;
-        &lt;li&gt;&lt;img src=&quot;images/1.jpg&quot; width=&apos;500&apos; height=&apos;200&apos; alt=&quot;&quot;/&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;img src=&quot;images/2.jpg&quot; width=&apos;500&apos; height=&apos;200&apos; alt=&quot;&quot;/&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;img src=&quot;images/3.jpg&quot; width=&apos;500&apos; height=&apos;200&apos; alt=&quot;&quot;/&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;img src=&quot;images/4.jpg&quot; width=&apos;500&apos; height=&apos;200&apos; alt=&quot;&quot;/&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;img src=&quot;images/5.jpg&quot; width=&apos;500&apos; height=&apos;200&apos; alt=&quot;&quot;/&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ol&gt;&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div id=&quot;arr&quot;&gt;&lt;span id=&quot;left&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span id=&quot;right&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
-</code></pre><p></p>
-<h5 id="1-&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8FD0;&#x52A8;&#x51FD;&#x6570;&#xFF08;&#x5F53;&#x7528;&#x6237;&#x89E6;&#x53D1;&#x67D0;&#x4EF6;&#x4E8B;&#x4EF6;&#x65F6;&#x8C03;&#x7528;&#xFF09;"><a href="#1-&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8FD0;&#x52A8;&#x51FD;&#x6570;&#xFF08;&#x5F53;&#x7528;&#x6237;&#x89E6;&#x53D1;&#x67D0;&#x4EF6;&#x4E8B;&#x4EF6;&#x65F6;&#x8C03;&#x7528;&#xFF09;" class="headerlink" title="1.&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8FD0;&#x52A8;&#x51FD;&#x6570;&#xFF08;&#x5F53;&#x7528;&#x6237;&#x89E6;&#x53D1;&#x67D0;&#x4EF6;&#x4E8B;&#x4EF6;&#x65F6;&#x8C03;&#x7528;&#xFF09;"></a>1.&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x8FD0;&#x52A8;&#x51FD;&#x6570;&#xFF08;&#x5F53;&#x7528;&#x6237;&#x89E6;&#x53D1;&#x67D0;&#x4EF6;&#x4E8B;&#x4EF6;&#x65F6;&#x8C03;&#x7528;&#xFF09;</h5><pre><code>function animate(obj,target) {
-    clearInterval(obj.timeId);//&#x6BCF;&#x6B21;&#x70B9;&#x51FB;&#x4E86;&#x6309;&#x94AE;&#x4E4B;&#x540E;&#xFF0C;&#x5148;&#x6E05;&#x7A7A;&#x5B9A;&#x65F6;&#x5668;
-    obj.timeId = setInterval(function () {
-        var step = 20;
-        // &#x5148;&#x83B7;&#x5F97;demo&#x5BF9;&#x8C61;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;
-        var leader = obj.offsetLeft;//&#x5148;&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x7684;&#x8DDD;&#x79BB;&#x5DE6;&#x4FA7;&#x7684;&#x4F4D;&#x7F6E;
-        step = leader &lt; target ? step : -step;
-        if (Math.abs(leader - target) &gt; Math.abs(step)) {   // &#x8DDD;&#x79BB;&#x5927;&#x4E8E;step&#x65F6;&#x89E6;&#x53D1;
-            leader = leader + step; // &#x8D4B;&#x503C;
-            obj.style.left = leader + &apos;px&apos;; //&#x4E0D;&#x65AD;&#x79FB;&#x52A8;
-        } else {
-            clearInterval(obj.timeId);//&#x6E05;&#x7A7A;&#x5B9A;&#x65F6;&#x5668;
-            obj.style.left = target + &apos;px&apos;;//&#x624B;&#x52A8;&#x8BBE;&#x7F6E;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;
-        }
+      		<h3 id="&#x5E38;&#x7528;&#x7684;&#x4E00;&#x4E9B;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;"><a href="#&#x5E38;&#x7528;&#x7684;&#x4E00;&#x4E9B;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;" class="headerlink" title="&#x5E38;&#x7528;&#x7684;&#x4E00;&#x4E9B;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;"></a>&#x5E38;&#x7528;&#x7684;&#x4E00;&#x4E9B;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</h3><pre><code>//&#x5339;&#x914D;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x3001;&#x4E2D;&#x6587;&#x5B57;&#x7B26; 
+/^([A-Za-z0-9]|[\u4e00-\u9fa5])*$/ 
 
-    }, 15);
-</code></pre><h5 id="2-&#x751F;&#x6210;&#x8F6E;&#x64AD;&#x56FE;&#x4E0A;&#x7684;&#x5C0F;&#x65B9;&#x5757;"><a href="#2-&#x751F;&#x6210;&#x8F6E;&#x64AD;&#x56FE;&#x4E0A;&#x7684;&#x5C0F;&#x65B9;&#x5757;" class="headerlink" title="2.&#x751F;&#x6210;&#x8F6E;&#x64AD;&#x56FE;&#x4E0A;&#x7684;&#x5C0F;&#x65B9;&#x5757;"></a>2.&#x751F;&#x6210;&#x8F6E;&#x64AD;&#x56FE;&#x4E0A;&#x7684;&#x5C0F;&#x65B9;&#x5757;</h5><pre><code>for(var i=0;i&lt;lis.length;i++){    //&#x56FE;&#x7247;&#x4E2A;&#x6570;&#x7684;&#x957F;&#x5EA6;
-    var li = document.createElement(&quot;li&quot;);
-    li.innerHTML = i+1;
-    ol.appendChild(li);
-}
-</code></pre><h5 id="3-&#x9F20;&#x6807;&#x79FB;&#x5230;&#x5C0F;&#x65B9;&#x5757;&#x4E0A;"><a href="#3-&#x9F20;&#x6807;&#x79FB;&#x5230;&#x5C0F;&#x65B9;&#x5757;&#x4E0A;" class="headerlink" title="3.&#x9F20;&#x6807;&#x79FB;&#x5230;&#x5C0F;&#x65B9;&#x5757;&#x4E0A;"></a>3.&#x9F20;&#x6807;&#x79FB;&#x5230;&#x5C0F;&#x65B9;&#x5757;&#x4E0A;</h5><pre><code>var pic = 0; //&#x56FE;&#x7247;&#x7684;&#x7D22;&#x5F15;
-var square = 0; //&#x5C0F;&#x65B9;&#x5757;&#x7684;&#x7D22;&#x5F15;
-//&#x5148;&#x8BA9;&#x7B2C;&#x4E00;&#x4E2A;&#x5C0F;&#x65B9;&#x5757;&#x989C;&#x8272;
-var olLis = ol.children;
-olLis[0].className=&apos;current&apos;;
-//onmouseover&#x4E8B;&#x4EF6;
-for(var i=0;i&lt;olLis.length;i++){
-    olLis[i].index = i;
-    olLis[i].onmouseover = function(){
-        for(var j=0;j&lt;olLis.length;j++){
-            olLis[j].className= &quot;&quot;; 
-        }
-        this.className = &quot;current&quot;;
-        // &#x9F20;&#x6807;&#x79FB;&#x5165;&#x5BF9;&#x5E94;&#x7684;&#x5C0F;&#x65B9;&#x5757;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x56FE;&#x7247;&#x79FB;&#x52A8;&#x5BF9;&#x5E94;&#x5C0F;&#x65B9;&#x5757;&#x7D22;&#x5F15;&#x4E2A;&#x56FE;&#x7247;&#x7684;&#x5BBD;&#x5EA6;
-        var target = -imgWidth*this.index;
-        animate(ul,target);
-        pic=square=this.index;
+//&#x9A8C;&#x8BC1;&#x90AE;&#x7BB1; 
+/^\w+@([0-9a-zA-Z]+[.])+[a-z]{2,4}$/ 
+
+//&#x9A8C;&#x8BC1;&#x624B;&#x673A;&#x53F7; 
+/^1[3|5|8|7]\d{9}$/ 
+
+//&#x9A8C;&#x8BC1;URL 
+/^http:\/\/.+\./
+
+//&#x9A8C;&#x8BC1;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801; 
+/(^\d{15}$)|(^\d{17}([0-9]|X|x)$)/ 
+
+//&#x5339;&#x914D;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F; 
+/[\u4e00-\u9fa5]/ 
+
+//&#x5339;&#x914D;&#x53CC;&#x5B57;&#x8282;&#x5B57;&#x7B26;(&#x5305;&#x62EC;&#x6C49;&#x5B57;&#x5728;&#x5185;) 
+/[^\x00-\xff]/
+</code></pre><h3 id="&#x963B;&#x6B62;&#x5192;&#x6CE1;"><a href="#&#x963B;&#x6B62;&#x5192;&#x6CE1;" class="headerlink" title="&#x963B;&#x6B62;&#x5192;&#x6CE1;"></a>&#x963B;&#x6B62;&#x5192;&#x6CE1;</h3><pre><code>// &#x539F;&#x751F;js
+document.getElementById(&apos;btn&apos;).addEventListener(&apos;click&apos;, function (event) {
+    event = event || window.event&#xFF1B;
+
+    if (event.stopPropagation){
+        // w3c&#x65B9;&#x6CD5; &#x963B;&#x6B62;&#x5192;&#x6CE1;
+        event.stopPropagation();
+    } else{
+        // ie &#x963B;&#x6B62;&#x5192;&#x6CE1;
+        event.cancelBubble = true;
     }
-}
-</code></pre><h5 id="4-&#x9F20;&#x6807;&#x79FB;&#x5165;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x6309;&#x94AE;"><a href="#4-&#x9F20;&#x6807;&#x79FB;&#x5165;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x6309;&#x94AE;" class="headerlink" title="4.&#x9F20;&#x6807;&#x79FB;&#x5165;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x6309;&#x94AE;"></a>4.&#x9F20;&#x6807;&#x79FB;&#x5165;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x6309;&#x94AE;</h5><pre><code>//&#x9F20;&#x6807;&#x79FB;&#x5165;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x6309;&#x94AE;
-box.onmouseover = function(){
-    arr.style.display = &quot;block&quot;;
-    clearInterval(timerId);
-}
-box.onmouseout = function(){
-    arr.style.display=&quot;none&quot;;
-    timerId=setInterval(playNext,1000);
-}
-</code></pre><h5 id="4-&#x590D;&#x5236;&#x7B2C;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x5230;ul&#x6700;&#x540E;&#xFF08;&#x5DE7;&#x5999;&#x4E4B;&#x5904;&#xFF09;"><a href="#4-&#x590D;&#x5236;&#x7B2C;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x5230;ul&#x6700;&#x540E;&#xFF08;&#x5DE7;&#x5999;&#x4E4B;&#x5904;&#xFF09;" class="headerlink" title="4.&#x590D;&#x5236;&#x7B2C;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x5230;ul&#x6700;&#x540E;&#xFF08;&#x5DE7;&#x5999;&#x4E4B;&#x5904;&#xFF09;"></a>4.&#x590D;&#x5236;&#x7B2C;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x5230;ul&#x6700;&#x540E;&#xFF08;&#x5DE7;&#x5999;&#x4E4B;&#x5904;&#xFF09;</h5><pre><code>var firstLi = lis[0].cloneNode(true);
-ul.appendChild(firstLi);
-</code></pre><h5 id="5-&#x5DE6;&#x53F3;&#x6309;&#x94AE;&#x6CE8;&#x518C;&#x5355;&#x51FB;&#x4E8B;&#x4EF6;"><a href="#5-&#x5DE6;&#x53F3;&#x6309;&#x94AE;&#x6CE8;&#x518C;&#x5355;&#x51FB;&#x4E8B;&#x4EF6;" class="headerlink" title="5.&#x5DE6;&#x53F3;&#x6309;&#x94AE;&#x6CE8;&#x518C;&#x5355;&#x51FB;&#x4E8B;&#x4EF6;"></a>5.&#x5DE6;&#x53F3;&#x6309;&#x94AE;&#x6CE8;&#x518C;&#x5355;&#x51FB;&#x4E8B;&#x4EF6;</h5><pre><code>//&#x5C01;&#x88C5;&#x6210;playNext,&#x53EF;&#x590D;&#x7528;
-function playNext(){
-    if(pic==lis.length-1){
-        pic=0;
-        ul.style.left = &quot;0px&quot;;
+}, false);
+
+// jQuery
+$(&apos;#btn&apos;).on(&apos;click&apos;, function (event) {
+event.stopPropagation();
+});
+</code></pre><h3 id="&#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;"><a href="#&#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;" class="headerlink" title="&#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;"></a>&#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;</h3><p>&#x539F;&#x751F;js</p>
+<pre><code>document.getElementById(&apos;btn&apos;).addEventListener(&apos;click&apos;, function (event) {
+    event = event || window.event&#xFF1B;
+
+    if (event.preventDefault){
+        // w3c&#x65B9;&#x6CD5; &#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;
+        event.preventDefault();
+    } else{
+        // ie &#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;
+        event.returnValue = false;
     }
-    pic++;
-    var target = -imgWidth*pic;
-    animate(ul,target);
-    if(square&lt;olLis.length-1){
-        square++;
+}, false);
+</code></pre><p>jQuery</p>
+<pre><code>// jQuery
+$(&apos;#btn&apos;).on(&apos;click&apos;, function (event) {
+event.preventDefault();
+});
+</code></pre><h3 id="&#x9F20;&#x6807;&#x6EDA;&#x8F6E;&#x4E8B;&#x4EF6;"><a href="#&#x9F20;&#x6807;&#x6EDA;&#x8F6E;&#x4E8B;&#x4EF6;" class="headerlink" title="&#x9F20;&#x6807;&#x6EDA;&#x8F6E;&#x4E8B;&#x4EF6;"></a>&#x9F20;&#x6807;&#x6EDA;&#x8F6E;&#x4E8B;&#x4EF6;</h3><pre><code>$(&apos;#content&apos;).on(&quot;mousewheel DOMMouseScroll&quot;, function (event) { 
+    // chrome &amp; ie || // firefox
+    var delta = (event.originalEvent.wheelDelta &amp;&amp; (event.originalEvent.wheelDelta &gt; 0 ? 1 : -1)) || 
+    (event.originalEvent.detail &amp;&amp; (event.originalEvent.detail &gt; 0 ? -1 : 1));  
+
+    if (delta &gt; 0) { 
+        // &#x5411;&#x4E0A;&#x6EDA;&#x52A8;
+        console.log(&apos;mousewheel top&apos;);
+    } else if (delta &lt; 0) {
+        // &#x5411;&#x4E0B;&#x6EDA;&#x52A8;
+        console.log(&apos;mousewheel bottom&apos;);
+    } 
+});
+</code></pre><h3 id="&#x68C0;&#x6D4B;&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x5426;&#x652F;&#x6301;svg"><a href="#&#x68C0;&#x6D4B;&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x5426;&#x652F;&#x6301;svg" class="headerlink" title="&#x68C0;&#x6D4B;&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x5426;&#x652F;&#x6301;svg"></a>&#x68C0;&#x6D4B;&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x5426;&#x652F;&#x6301;svg</h3><pre><code>function isSupportSVG() { 
+    var SVG_NS = &apos;http://www.w3.org/2000/svg&apos;;
+    return !!document.createElementNS &amp;&amp;!!document.createElementNS(SVG_NS, &apos;svg&apos;).createSVGRect; 
+} 
+
+// &#x6D4B;&#x8BD5;
+console.log(isSupportSVG());
+</code></pre><h3 id="&#x68C0;&#x6D4B;&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x5426;&#x652F;&#x6301;canvas"><a href="#&#x68C0;&#x6D4B;&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x5426;&#x652F;&#x6301;canvas" class="headerlink" title="&#x68C0;&#x6D4B;&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x5426;&#x652F;&#x6301;canvas"></a>&#x68C0;&#x6D4B;&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x5426;&#x652F;&#x6301;canvas</h3><pre><code>function isSupportCanvas() {
+    if(document.createElement(&apos;canvas&apos;).getContext){
+        return true;
     }else{
-        square=0;
+        return false;
     }
-    for(var j=0;j&lt;olLis.length;j++){
-        olLis[j].className=&apos;&apos;;
-    }
-    olLis[square].className = &apos;current&apos;;
 }
-//&#x5DE6;&#x53F3;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;
-arrRight.onclick = playNext;    
-arrLeft.onclick = function(){
-    if(pic==0){
-        pic=lis.length-1;
-        ul.style.left=-imgWidth*(lis.length-1)+&apos;px&apos;;
-    }
-    pic--;
-    var target = -imgWidth*pic;
-    animate(ul,target);
 
-    if(square&gt;0){
-        square--;
-    }else {
-        square = olLis.length-1;
+// &#x6D4B;&#x8BD5;&#xFF0C;&#x6253;&#x5F00;&#x8C37;&#x6B4C;&#x6D4F;&#x89C8;&#x5668;&#x63A7;&#x5236;&#x53F0;&#x67E5;&#x770B;&#x7ED3;&#x679C;
+console.log(isSupportCanvas());
+</code></pre><h3 id="&#x68C0;&#x6D4B;&#x662F;&#x5426;&#x662F;&#x5FAE;&#x4FE1;&#x6D4F;&#x89C8;&#x5668;"><a href="#&#x68C0;&#x6D4B;&#x662F;&#x5426;&#x662F;&#x5FAE;&#x4FE1;&#x6D4F;&#x89C8;&#x5668;" class="headerlink" title="&#x68C0;&#x6D4B;&#x662F;&#x5426;&#x662F;&#x5FAE;&#x4FE1;&#x6D4F;&#x89C8;&#x5668;"></a>&#x68C0;&#x6D4B;&#x662F;&#x5426;&#x662F;&#x5FAE;&#x4FE1;&#x6D4F;&#x89C8;&#x5668;</h3><pre><code>function isWeiXinClient() {
+    var ua = navigator.userAgent.toLowerCase(); 
+    if (ua.match(/MicroMessenger/i)==&quot;micromessenger&quot;) { 
+        return true; 
+    } else { 
+        return false; 
     }
-    for(var j=0;j&lt;olLis.length;j++){
-        olLis[j].className=&apos;&apos;;
-    }
-    olLis[square].className = &apos;current&apos;;
 }
-</code></pre><h5 id="6-&#x5F00;&#x542F;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x81EA;&#x52A8;&#x8F6E;&#x64AD;"><a href="#6-&#x5F00;&#x542F;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x81EA;&#x52A8;&#x8F6E;&#x64AD;" class="headerlink" title="6.&#x5F00;&#x542F;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x81EA;&#x52A8;&#x8F6E;&#x64AD;"></a>6.&#x5F00;&#x542F;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x81EA;&#x52A8;&#x8F6E;&#x64AD;</h5><pre><code>timerId = setInterval(playNext,1000);    
+
+// &#x6D4B;&#x8BD5;
+alert(isWeiXinClient());
+</code></pre><h3 id="jQuery-&#x83B7;&#x53D6;&#x9F20;&#x6807;&#x5728;&#x56FE;&#x7247;&#x4E0A;&#x7684;&#x5750;&#x6807;"><a href="#jQuery-&#x83B7;&#x53D6;&#x9F20;&#x6807;&#x5728;&#x56FE;&#x7247;&#x4E0A;&#x7684;&#x5750;&#x6807;" class="headerlink" title="jQuery &#x83B7;&#x53D6;&#x9F20;&#x6807;&#x5728;&#x56FE;&#x7247;&#x4E0A;&#x7684;&#x5750;&#x6807;"></a>jQuery &#x83B7;&#x53D6;&#x9F20;&#x6807;&#x5728;&#x56FE;&#x7247;&#x4E0A;&#x7684;&#x5750;&#x6807;</h3><pre><code>$(&apos;#myImage&apos;).click(function(event){
+    //&#x83B7;&#x53D6;&#x9F20;&#x6807;&#x5728;&#x56FE;&#x7247;&#x4E0A;&#x7684;&#x5750;&#x6807; 
+    console.log(&apos;X&#xFF1A;&apos; + event.offsetX+&apos;\n Y:&apos; + event.offsetY); 
+
+    //&#x83B7;&#x53D6;&#x5143;&#x7D20;&#x76F8;&#x5BF9;&#x4E8E;&#x9875;&#x9762;&#x7684;&#x5750;&#x6807; 
+    console.log(&apos;X&#xFF1A;&apos;+$(this).offset().left+&apos;\n Y:&apos;+$(this).offset().top);
+});
+</code></pre><h3 id="&#x9A8C;&#x8BC1;&#x7801;&#x5012;&#x8BA1;&#x65F6;&#x4EE3;&#x7801;"><a href="#&#x9A8C;&#x8BC1;&#x7801;&#x5012;&#x8BA1;&#x65F6;&#x4EE3;&#x7801;" class="headerlink" title="&#x9A8C;&#x8BC1;&#x7801;&#x5012;&#x8BA1;&#x65F6;&#x4EE3;&#x7801;"></a>&#x9A8C;&#x8BC1;&#x7801;&#x5012;&#x8BA1;&#x65F6;&#x4EE3;&#x7801;</h3><pre><code>&lt;!-- dom --&gt;
+&lt;input id=&quot;send&quot; type=&quot;button&quot; value=&quot;&#x53D1;&#x9001;&#x9A8C;&#x8BC1;&#x7801;&quot;&gt;
+</code></pre><p>&#x539F;&#x751F;js&#x7248;&#x672C;</p>
+<pre><code>// &#x539F;&#x751F;js&#x7248;&#x672C;
+var times = 60, // &#x4E34;&#x65F6;&#x8BBE;&#x4E3A;60&#x79D2;
+timer = null;
+
+document.getElementById(&apos;send&apos;).onclick = function () {
+// &#x8BA1;&#x65F6;&#x5F00;&#x59CB;
+    timer = setInterval(function () {
+        times--;
+
+        if (times &lt;= 0) {
+            send.value = &apos;&#x53D1;&#x9001;&#x9A8C;&#x8BC1;&#x7801;&apos;;
+            clearInterval(timer);
+            send.disabled = false;
+            times = 60;
+        } else {
+            send.value = times + &apos;&#x79D2;&#x540E;&#x91CD;&#x8BD5;&apos;;
+            send.disabled = true;
+        }
+    }, 1000);
+}
+</code></pre><p>jQuery&#x7248;&#x672C;</p>
+<pre><code>// jQuery&#x7248;&#x672C;
+var times = 60,
+timer = null;
+
+$(&apos;#send&apos;).on(&apos;click&apos;, function () {
+    var $this = $(this);
+
+    // &#x8BA1;&#x65F6;&#x5F00;&#x59CB;
+    timer = setInterval(function () {
+        times--;
+
+        if (times &lt;= 0) {
+            $this.val(&apos;&#x53D1;&#x9001;&#x9A8C;&#x8BC1;&#x7801;&apos;);
+            clearInterval(timer);
+            $this.attr(&apos;disabled&apos;, false);
+            times = 60;
+        } else {
+            $this.val(times + &apos;&#x79D2;&#x540E;&#x91CD;&#x8BD5;&apos;);
+            $this.attr(&apos;disabled&apos;, true);
+        }
+    }, 1000);
+});
+</code></pre><h3 id="js&#x5224;&#x65AD;&#x662F;&#x5426;&#x79FB;&#x52A8;&#x7AEF;&#x53CA;&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x6838;"><a href="#js&#x5224;&#x65AD;&#x662F;&#x5426;&#x79FB;&#x52A8;&#x7AEF;&#x53CA;&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x6838;" class="headerlink" title="js&#x5224;&#x65AD;&#x662F;&#x5426;&#x79FB;&#x52A8;&#x7AEF;&#x53CA;&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x6838;"></a>js&#x5224;&#x65AD;&#x662F;&#x5426;&#x79FB;&#x52A8;&#x7AEF;&#x53CA;&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x6838;</h3><pre><code>var browser = { 
+    versions: function() { 
+        var u = navigator.userAgent; 
+        return { 
+            trident: u.indexOf(&apos;Trident&apos;) &gt; -1, //IE&#x5185;&#x6838; 
+            presto: u.indexOf(&apos;Presto&apos;) &gt; -1, //opera&#x5185;&#x6838; 
+            webKit: u.indexOf(&apos;AppleWebKit&apos;) &gt; -1, //&#x82F9;&#x679C;&#x3001;&#x8C37;&#x6B4C;&#x5185;&#x6838; 
+            gecko: u.indexOf(&apos;Firefox&apos;) &gt; -1, //&#x706B;&#x72D0;&#x5185;&#x6838;Gecko 
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //&#x662F;&#x5426;&#x4E3A;&#x79FB;&#x52A8;&#x7EC8;&#x7AEF; 
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios 
+            android: u.indexOf(&apos;Android&apos;) &gt; -1 || u.indexOf(&apos;Linux&apos;) &gt; -1, //    android 
+            iPhone: u.indexOf(&apos;iPhone&apos;) &gt; -1 , //iPhone 
+            iPad: u.indexOf(&apos;iPad&apos;) &gt; -1, //iPad 
+            webApp: u.indexOf(&apos;Safari&apos;) &gt; -1 //Safari 
+        }; 
+    }
+} 
+
+if (browser.versions.mobile() || browser.versions.ios() ||     browser.versions.android() || browser.versions.iPhone() ||     browser.versions.iPad()) { 
+    alert(&apos;&#x79FB;&#x52A8;&#x7AEF;&apos;); 
+}
+</code></pre><h3 id="HTML5&#x5168;&#x5C4F;"><a href="#HTML5&#x5168;&#x5C4F;" class="headerlink" title="HTML5&#x5168;&#x5C4F;"></a>HTML5&#x5168;&#x5C4F;</h3><pre><code>function fullscreen(element) {
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+    }
+}
+
+fullscreen(document.documentElement);
 </code></pre>
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2016/10/26/分享一些前端开发中常用的JS代码片段/" style="float: left;">
-        ← 分享一些前端开发中常用的JS代码片段
-    </a>
     
-    
-    <a class="pull-right" href="/2016/10/08/记录遇到的兼容性问题/">
-        记录遇到的兼容性问题 →
+    <a class="pull-right" href="/2016/10/22/封装简单轮播图组件/">
+        原生JS封装简单轮播图 →
     </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/10/22/封装简单轮播图组件/" data-title="原生JS封装简单轮播图" data-url="http://yoursite.com/2016/10/22/封装简单轮播图组件/"></div>
+<div class="ds-thread" data-thread-key="2016/10/26/分享一些前端开发中常用的JS代码片段/" data-title="分享一些前端开发中常用的JS代码片段" data-url="http://yoursite.com/2016/10/26/分享一些前端开发中常用的JS代码片段/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"duoshuo_name"};
 (function() {
