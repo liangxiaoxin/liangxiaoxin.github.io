@@ -84,25 +84,24 @@
 
 
 
-<meta name="description" content="有时候，在开发某些功能时，需要模拟服务器来展示功能时，这时候我们就需要用到本地服务器来模拟。又或者在开发完成后，我们在发布网站之前都会在本地服务器上运行，测试一下网站的功能和效果的展现,测试完成后再上传到购买的主机空间正式上线使用。
-那么，有什么软件或者什么插件之类的可以模拟本地服务器呢？接下来就介绍几款优秀的web本地服务器。（以下环境基于MAC的OS X下，与Windows配置相差不大）
-XA">
+<meta name="description" content="前言这段时间，一直都是用node的稳定版本，最近因为工作需要，需要用到其他node版本，Google搜了一下，有很好的一个解决方案，选择node版本管理工具，轻松切换node。有两个很好的node版本工具， nvm 和 n ,那么问题来了，选择哪一个呢？
+废话，当然是哪个好用就用哪个嘛！
+虽然热度 nvm 比 n 高一点，无意中看到FED写的一篇blog《管理 node 版本，选择 nvm 还是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分享几款web本地服务器及搭建">
-<meta property="og:url" content="http://yoursite.com/2016/11/22/分享几款web本地服务器及搭建/index.html">
+<meta property="og:title" content="利用n管理node版本,轻松切换node">
+<meta property="og:url" content="http://yoursite.com/2017/01/10/利用n管理node版本-轻松切换node/index.html">
 <meta property="og:site_name" content="梁小新blog">
-<meta property="og:description" content="有时候，在开发某些功能时，需要模拟服务器来展示功能时，这时候我们就需要用到本地服务器来模拟。又或者在开发完成后，我们在发布网站之前都会在本地服务器上运行，测试一下网站的功能和效果的展现,测试完成后再上传到购买的主机空间正式上线使用。
-那么，有什么软件或者什么插件之类的可以模拟本地服务器呢？接下来就介绍几款优秀的web本地服务器。（以下环境基于MAC的OS X下，与Windows配置相差不大）
-XA">
-<meta property="og:image" content="http://yoursite.com/2016/11/22/分享几款web本地服务器及搭建/XAMPP.png">
-<meta property="og:image" content="http://yoursite.com/2016/11/22/分享几款web本地服务器及搭建/xampp1.png">
-<meta property="og:updated_time" content="2017-01-06T16:11:03.000Z">
+<meta property="og:description" content="前言这段时间，一直都是用node的稳定版本，最近因为工作需要，需要用到其他node版本，Google搜了一下，有很好的一个解决方案，选择node版本管理工具，轻松切换node。有两个很好的node版本工具， nvm 和 n ,那么问题来了，选择哪一个呢？
+废话，当然是哪个好用就用哪个嘛！
+虽然热度 nvm 比 n 高一点，无意中看到FED写的一篇blog《管理 node 版本，选择 nvm 还是">
+<meta property="og:image" content="http://yoursite.com/2017/01/10/利用n管理node版本-轻松切换node/n.gif">
+<meta property="og:updated_time" content="2017-01-10T16:55:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分享几款web本地服务器及搭建">
-<meta name="twitter:description" content="有时候，在开发某些功能时，需要模拟服务器来展示功能时，这时候我们就需要用到本地服务器来模拟。又或者在开发完成后，我们在发布网站之前都会在本地服务器上运行，测试一下网站的功能和效果的展现,测试完成后再上传到购买的主机空间正式上线使用。
-那么，有什么软件或者什么插件之类的可以模拟本地服务器呢？接下来就介绍几款优秀的web本地服务器。（以下环境基于MAC的OS X下，与Windows配置相差不大）
-XA">
-<meta name="twitter:image" content="http://yoursite.com/2016/11/22/分享几款web本地服务器及搭建/XAMPP.png">
+<meta name="twitter:title" content="利用n管理node版本,轻松切换node">
+<meta name="twitter:description" content="前言这段时间，一直都是用node的稳定版本，最近因为工作需要，需要用到其他node版本，Google搜了一下，有很好的一个解决方案，选择node版本管理工具，轻松切换node。有两个很好的node版本工具， nvm 和 n ,那么问题来了，选择哪一个呢？
+废话，当然是哪个好用就用哪个嘛！
+虽然热度 nvm 比 n 高一点，无意中看到FED写的一篇blog《管理 node 版本，选择 nvm 还是">
+<meta name="twitter:image" content="http://yoursite.com/2017/01/10/利用n管理node版本-轻松切换node/n.gif">
 
 
 
@@ -130,13 +129,13 @@ XA">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/22/分享几款web本地服务器及搭建/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/10/利用n管理node版本-轻松切换node/"/>
 
 
 
 
 
-  <title> 分享几款web本地服务器及搭建 | 梁小新blog </title>
+  <title> 利用n管理node版本,轻松切换node | 梁小新blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -249,7 +248,7 @@ XA">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/22/分享几款web本地服务器及搭建/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/10/利用n管理node版本-轻松切换node/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="liangxiaoxin">
@@ -273,7 +272,7 @@ XA">
             
             
               
-                分享几款web本地服务器及搭建
+                利用n管理node版本,轻松切换node
               
             
           </h2>
@@ -288,8 +287,8 @@ XA">
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-22T20:12:59+08:00">
-                2016-11-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-10T23:31:44+08:00">
+                2017-01-10
               </time>
             
 
@@ -324,41 +323,30 @@ XA">
       
 
       
-        <p>有时候，在开发某些功能时，需要模拟服务器来展示功能时，这时候我们就需要用到本地服务器来模拟。又或者在开发完成后，我们在发布网站之前都会在本地服务器上运行，测试一下网站的功能和效果的展现,测试完成后再上传到购买的主机空间正式上线使用。</p>
-<p>那么，有什么软件或者什么插件之类的可以模拟本地服务器呢？接下来就介绍几款优秀的web本地服务器。<br>（以下环境基于MAC的OS X下，与Windows配置相差不大）</p>
-<h3 id="XAMPP-WAMPP"><a href="#XAMPP-WAMPP" class="headerlink" title="XAMPP /  WAMPP"></a>XAMPP /  WAMPP</h3><p><code>XAMPP</code> 顾名思义 (Apache+MySQL+PHP+PERL) </p>
-<p>XAMPP是利用Apache服务，能够模拟本地服务器可以取到PHP文件从而获取MySQL文件，就是说可以自己新建PHP后台文件和JSON数据文件，可以模拟一些像利用AJAX请求，向后台拿到数据，完成一个完整的请求。</p>
-<h6 id="下载地址：https-www-apachefriends-org-download-html"><a href="#下载地址：https-www-apachefriends-org-download-html" class="headerlink" title="下载地址：https://www.apachefriends.org/download.html"></a>下载地址：<a href="https://www.apachefriends.org/download.html" target="_blank" rel="external">https://www.apachefriends.org/download.html</a></h6><p><img src="/2016/11/22/分享几款web本地服务器及搭建/XAMPP.png" alt="XAMPP"></p>
-<h6 id="下载完成后可以看到以下的界面，点击star，在浏览器输入-http-localhost-就能看到首页了。"><a href="#下载完成后可以看到以下的界面，点击star，在浏览器输入-http-localhost-就能看到首页了。" class="headerlink" title="下载完成后可以看到以下的界面，点击star，在浏览器输入 http://localhost/ 就能看到首页了。"></a>下载完成后可以看到以下的界面，点击star，在浏览器输入 <a href="http://localhost/" target="_blank" rel="external">http://localhost/</a> 就能看到首页了。</h6><p>XAMPP默认的根目录是/Applications/XAMPP/xamppfiles/htdocs，把文件夹(yourProject)拖到htdocs，在浏览器输入<a href="http://localhost/yourProject，但是这样相当麻烦，这就需要配置根目录了。" target="_blank" rel="external">http://localhost/yourProject，但是这样相当麻烦，这就需要配置根目录了。</a></p>
-<h5 id="配置XAMPP根目录"><a href="#配置XAMPP根目录" class="headerlink" title="配置XAMPP根目录"></a>配置XAMPP根目录</h5><p>在XAMPP软件界面点击Manage Servers → Configure → Open Conf File 点击 YES 进入 httpd.conf文件，<br>command+F 搜索 “docs”，找到 DocumentRoot 和 Directory </p>
-<p><img src="/2016/11/22/分享几款web本地服务器及搭建/xampp1.png" alt="XAMPP1"></p>
-<p>改成自己想要的目录就可以了。</p>
-<p>我的文件夹为<code>/Users/liangyongxin/desktop/mydemo</code></p>
-<p>还有配置主机和站点这里就不多说了。各位可以百度一下。</p>
-<h3 id="http-server"><a href="#http-server" class="headerlink" title="http-server"></a>http-server</h3><p>一款基于Node.js的命令行http服务器，利用node.js开启本地服务，下载前请先自行下载node服务。</p>
-<p>node地址：<a href="https://github.com/nodejs/node" target="_blank" rel="external">https://github.com/nodejs/node</a></p>
-<p>安装方式：<br>​<br>    npm install http-server -g</p>
-<p>启动方法，直接在所在项目文件夹下开启服务：</p>
-<pre><code>http-server -open
-hs -o  //简写也可以
-</code></pre><p>http-server 地址：<a href="https://github.com/indexzero/http-server" target="_blank" rel="external">https://github.com/indexzero/http-server</a>    </p>
-<h3 id="browser-sync"><a href="#browser-sync" class="headerlink" title="browser-sync"></a>browser-sync</h3><p>一款可以让你省时的浏览器同步测试工具，开启服务后，pc端、手机端同步更新，快速查看测试效果。<code>而且是完全免费的。</code></p>
-<p>官方中文网：<a href="http://www.browsersync.cn/" target="_blank" rel="external">http://www.browsersync.cn/</a></p>
-<p>github地址：<a href="https://github.com/BrowserSync/browser-sync" target="_blank" rel="external">https://github.com/BrowserSync/browser-sync</a></p>
-<p>安装方式：<br>​<br>    npm install -g browser-sync</p>
-<p>启动方式，直接在所在项目文件夹下开启服务：</p>
-<pre><code>// --files &quot;路径是相对于运行该命令的项目（目录）&quot; 
-browser-sync start --server --files &quot;dist&quot;
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这段时间，一直都是用node的稳定版本，最近因为工作需要，需要用到其他node版本，Google搜了一下，有很好的一个解决方案，选择node版本管理工具，轻松切换node。有两个很好的node版本工具， <code>nvm</code> 和 <code>n</code> ,那么问题来了，选择哪一个呢？</p>
+<p>废话，当然是哪个好用就用哪个嘛！</p>
+<p>虽然热度 <code>nvm</code> 比 <code>n</code> 高一点，无意中看到FED写的一篇blog<a href="http://taobaofed.org/blog/2015/11/17/nvm-or-n/" target="_blank" rel="external">《管理 node 版本，选择 nvm 还是 n？》</a>，觉得 <code>n</code> 比较简单易用，然后就毫不犹豫地选择了 <code>n</code>，全局安装之后输入命令就可以无缝切换了。</p>
+<p><img src="/2017/01/10/利用n管理node版本-轻松切换node/n.gif" alt="n"></p>
+<p><code>n</code> github地址： <a href="https://github.com/tj/n" target="_blank" rel="external">https://github.com/tj/n</a></p>
+<p><code>nvm</code> github地址：<a href="https://github.com/creationix/nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>$ npm install -g n
+</code></pre><p>下载完成后就可以使用 <code>n</code> 了。</p>
+<h4 id="利用-n-下载所需node"><a href="#利用-n-下载所需node" class="headerlink" title="利用 n 下载所需node"></a>利用 n 下载所需node</h4><pre><code>$ n 版本号   
+</code></pre><p>下载最新版本</p>
+<pre><code>$ n latest
+</code></pre><p>删除某个版本</p>
+<pre><code>$ n rm 4.4.4 
+</code></pre><p>查看当前 node 版本</p>
+<pre><code>$ node -v
+</code></pre><p>切换版本</p>
+<pre><code>$ n
 
-// 监听css文件 
-browser-sync start --server --files &quot;css/*.css&quot;
-// 监听css和html文件 
-browser-sync start --server --files &quot;css/*.css, *.html&quot;
-</code></pre><p>具体监听可查看<a href="http://www.browsersync.cn/" target="_blank" rel="external">官网</a><br>，有详细例子解释。一般监听整个项目文件夹。<br>​    </p>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>开启本地服务后，系统会自动生成一个本地地址和一个外网地址</p>
-<p>此时可以使用手机打开外网地址就可查看（可能需要同一wifi下）。</p>
-<p>一般来说，使用以上几个本地服务器就足够了。<br>​    </p>
-
+  6.9.4
+ο 7.4.0
+  4.4.4
+</code></pre><p>以指定的版本来执行脚本</p>
+<pre><code>$ n use 7.4.0 index.js
+</code></pre>
       
     </div>
 
@@ -384,8 +372,8 @@ browser-sync start --server --files &quot;css/*.css, *.html&quot;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/26/分享一些前端开发中常用的JS代码片段/" rel="next" title="分享一些前端开发中常用的JS代码片段">
-                <i class="fa fa-chevron-left"></i> 分享一些前端开发中常用的JS代码片段
+              <a href="/2017/01/07/seajs和requirejs实现模块化开发/" rel="next" title="seajs和requirejs实现模块化开发">
+                <i class="fa fa-chevron-left"></i> seajs和requirejs实现模块化开发
               </a>
             
           </div>
@@ -393,10 +381,6 @@ browser-sync start --server --files &quot;css/*.css, *.html&quot;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/07/seajs和requirejs实现模块化开发/" rel="prev" title="seajs和requirejs实现模块化开发">
-                seajs和requirejs实现模块化开发 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -505,7 +489,7 @@ browser-sync start --server --files &quot;css/*.css, *.html&quot;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#XAMPP-WAMPP"><span class="nav-number">1.</span> <span class="nav-text">XAMPP /  WAMPP</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#下载地址：https-www-apachefriends-org-download-html"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">下载地址：https://www.apachefriends.org/download.html</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#下载完成后可以看到以下的界面，点击star，在浏览器输入-http-localhost-就能看到首页了。"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">下载完成后可以看到以下的界面，点击star，在浏览器输入 http://localhost/ 就能看到首页了。</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置XAMPP根目录"><span class="nav-number">1.0.1.</span> <span class="nav-text">配置XAMPP根目录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http-server"><span class="nav-number">2.</span> <span class="nav-text">http-server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#browser-sync"><span class="nav-number">3.</span> <span class="nav-text">browser-sync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结："><span class="nav-number">4.</span> <span class="nav-text">总结：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用-n-下载所需node"><span class="nav-number">2.1.</span> <span class="nav-text">利用 n 下载所需node</span></a></li></ol></li></ol></div>
             
 
           </div>

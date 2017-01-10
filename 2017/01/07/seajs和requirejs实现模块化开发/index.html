@@ -84,25 +84,43 @@
 
 
 
-<meta name="description" content="seajs&amp;#x6A21;&amp;#x5757;&amp;#x5316;&amp;#x52A0;&amp;#x8F7D;&amp;#x6846;&amp;#x67B6;
-5&amp;#x5206;&amp;#x949F;&amp;#x5165;&amp;#x95E8;
-1: &amp;#x5F15;&amp;#x5305;
-2: &amp;#x542F;&amp;#x52A8; seajs.use(&amp;quot;../static/lucky/src/main&amp;quot;); main.js&amp;#x53EF;">
+<meta name="description" content="seajs模块化加载框架
+5分钟入门
+1: 引包
+2: 启动 seajs.use(&amp;quot;../static/lucky/src/main&amp;quot;); main.js可以省略后缀
+建议： seajs.use([]); 第一：建议传数组，第二：不管使用什么的时候，尽量省略.js
+
+
+3: 不管是谁，首先你得自己是一个模块，然后还可以向模块导出数据
+define(函数或者数组);
+建议掌握传递">
 <meta property="og:type" content="article">
 <meta property="og:title" content="seajs和requirejs实现模块化开发">
 <meta property="og:url" content="http://yoursite.com/2017/01/07/seajs和requirejs实现模块化开发/index.html">
 <meta property="og:site_name" content="梁小新blog">
-<meta property="og:description" content="seajs&amp;#x6A21;&amp;#x5757;&amp;#x5316;&amp;#x52A0;&amp;#x8F7D;&amp;#x6846;&amp;#x67B6;
-5&amp;#x5206;&amp;#x949F;&amp;#x5165;&amp;#x95E8;
-1: &amp;#x5F15;&amp;#x5305;
-2: &amp;#x542F;&amp;#x52A8; seajs.use(&amp;quot;../static/lucky/src/main&amp;quot;); main.js&amp;#x53EF;">
-<meta property="og:updated_time" content="2017-01-07T13:09:38.000Z">
+<meta property="og:description" content="seajs模块化加载框架
+5分钟入门
+1: 引包
+2: 启动 seajs.use(&amp;quot;../static/lucky/src/main&amp;quot;); main.js可以省略后缀
+建议： seajs.use([]); 第一：建议传数组，第二：不管使用什么的时候，尽量省略.js
+
+
+3: 不管是谁，首先你得自己是一个模块，然后还可以向模块导出数据
+define(函数或者数组);
+建议掌握传递">
+<meta property="og:updated_time" content="2017-01-07T13:22:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="seajs和requirejs实现模块化开发">
-<meta name="twitter:description" content="seajs&amp;#x6A21;&amp;#x5757;&amp;#x5316;&amp;#x52A0;&amp;#x8F7D;&amp;#x6846;&amp;#x67B6;
-5&amp;#x5206;&amp;#x949F;&amp;#x5165;&amp;#x95E8;
-1: &amp;#x5F15;&amp;#x5305;
-2: &amp;#x542F;&amp;#x52A8; seajs.use(&amp;quot;../static/lucky/src/main&amp;quot;); main.js&amp;#x53EF;">
+<meta name="twitter:description" content="seajs模块化加载框架
+5分钟入门
+1: 引包
+2: 启动 seajs.use(&amp;quot;../static/lucky/src/main&amp;quot;); main.js可以省略后缀
+建议： seajs.use([]); 第一：建议传数组，第二：不管使用什么的时候，尽量省略.js
+
+
+3: 不管是谁，首先你得自己是一个模块，然后还可以向模块导出数据
+define(函数或者数组);
+建议掌握传递">
 
 
 
@@ -324,163 +342,162 @@
       
 
       
-        <h3 id="seajs&#x6A21;&#x5757;&#x5316;&#x52A0;&#x8F7D;&#x6846;&#x67B6;"><a href="#seajs&#x6A21;&#x5757;&#x5316;&#x52A0;&#x8F7D;&#x6846;&#x67B6;" class="headerlink" title="seajs&#x6A21;&#x5757;&#x5316;&#x52A0;&#x8F7D;&#x6846;&#x67B6;"></a>seajs&#x6A21;&#x5757;&#x5316;&#x52A0;&#x8F7D;&#x6846;&#x67B6;</h3><hr>
-<h4 id="5&#x5206;&#x949F;&#x5165;&#x95E8;"><a href="#5&#x5206;&#x949F;&#x5165;&#x95E8;" class="headerlink" title="5&#x5206;&#x949F;&#x5165;&#x95E8;"></a>5&#x5206;&#x949F;&#x5165;&#x95E8;</h4><ul>
-<li>1: &#x5F15;&#x5305;</li>
-<li>2: &#x542F;&#x52A8; <code>seajs.use(&quot;../static/lucky/src/main&quot;);</code> main.js&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x540E;&#x7F00;<ul>
-<li>&#x5EFA;&#x8BAE;&#xFF1A; seajs.use([]); <strong>&#x7B2C;&#x4E00;&#xFF1A;&#x5EFA;&#x8BAE;&#x4F20;&#x6570;&#x7EC4;&#xFF0C;&#x7B2C;&#x4E8C;&#xFF1A;&#x4E0D;&#x7BA1;&#x4F7F;&#x7528;&#x4EC0;&#x4E48;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C3D;&#x91CF;&#x7701;&#x7565;.js</strong></li>
+        <h3 id="seajs模块化加载框架"><a href="#seajs模块化加载框架" class="headerlink" title="seajs模块化加载框架"></a>seajs模块化加载框架</h3><hr>
+<h4 id="5分钟入门"><a href="#5分钟入门" class="headerlink" title="5分钟入门"></a>5分钟入门</h4><ul>
+<li>1: 引包</li>
+<li>2: 启动 <code>seajs.use(&quot;../static/lucky/src/main&quot;);</code> main.js可以省略后缀<ul>
+<li>建议： seajs.use([]); <strong>第一：建议传数组，第二：不管使用什么的时候，尽量省略.js</strong></li>
 </ul>
 </li>
-<li>3: &#x4E0D;&#x7BA1;&#x662F;&#x8C01;&#xFF0C;&#x9996;&#x5148;&#x4F60;&#x5F97;&#x81EA;&#x5DF1;&#x662F;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x7136;&#x540E;&#x8FD8;&#x53EF;&#x4EE5;&#x5411;&#x6A21;&#x5757;&#x5BFC;&#x51FA;&#x6570;&#x636E;<ul>
-<li>define(&#x51FD;&#x6570;&#x6216;&#x8005;&#x6570;&#x7EC4;);</li>
-<li>&#x5EFA;&#x8BAE;&#x638C;&#x63E1;&#x4F20;&#x9012;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;module.exports &#x53EF;&#x4EE5;&#x7528;return &#x6765;&#x66FF;&#x4EE3;</li>
+<li>3: 不管是谁，首先你得自己是一个模块，然后还可以向模块导出数据<ul>
+<li>define(函数或者数组);</li>
+<li>建议掌握传递函数的方式，module.exports 可以用return 来替代</li>
 </ul>
 </li>
-<li>4: &#x4F60;&#x672C;&#x8EAB;&#x662F;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5F15;&#x5165;&#x6A21;&#x5757;&#xFF0C;&#x62FF;&#x5230;&#x8FD4;&#x56DE;&#x503C;<code>require(&apos;./data&apos;);</code><ul>
-<li>&#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;require();</li>
+<li>4: 你本身是一个模块，你可以引入模块，拿到返回值<code>require(&#39;./data&#39;);</code><ul>
+<li>如果不需要返回值。也可以require();</li>
 </ul>
 </li>
-<li>5: &#x5982;&#x679C;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;module.exports = xxxx&#x6765;&#x8BA9;&#x5916;&#x90E8;&#x83B7;&#x53D6;<ul>
-<li>exports&#x7528;&#x6765;&#x6302;&#x8F7D;&#x5C5E;&#x6027;,module.exports&#x662F;&#x901A;&#x7528;</li>
+<li>5: 如果需要返回值，也可以通过module.exports = xxxx来让外部获取<ul>
+<li>exports用来挂载属性,module.exports是通用</li>
 </ul>
 </li>
 </ul>
-<p>sea.js&#x5B98;&#x7F51;&#xFF1A;<a href="http://seajs.org/docs/" target="_blank" rel="external">http://seajs.org/docs/</a></p>
+<p>sea.js官网：<a href="http://seajs.org/docs/" target="_blank" rel="external">http://seajs.org/docs/</a></p>
 <h4 id="define"><a href="#define" class="headerlink" title="define"></a>define</h4><ul>
-<li>define&#x5982;&#x679C;&#x4E0D;&#x4F20;function &#x90A3;&#x4E48;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x5C31;&#x662F;&#x5176;&#x8FD4;&#x56DE;&#x503C;</li>
-<li>&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x7684;&#x6570;&#x636E;&#x6709;&#xFF1A;<ul>
-<li>&#x5BF9;&#x8C61;&#x3001;&#x6570;&#x7EC4;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x3001;function</li>
+<li>define如果不传function 那么传入的参数就是其返回值</li>
+<li>可以传入的数据有：<ul>
+<li>对象、数组、字符串、function</li>
 </ul>
 </li>
 <li><code>define(function(require,exports,module){});</code></li>
 </ul>
 <h4 id="require"><a href="#require" class="headerlink" title="require"></a>require</h4><ul>
-<li>require&#x7684;&#x53C2;&#x6570;&#x53EA;&#x80FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;</li>
-<li>require&#x51FD;&#x6570;&#x662F;&#x6211;&#x81EA;&#x5DF1;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x540C;&#x6837;&#x6709;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x52A0;&#x8F7D;&#x591A;&#x6B21;<ul>
-<li>seajs&#x4E2D;&#xFF0C;&#x52A0;&#x8F7D;&#x7B2C;&#x4E00;&#x6B21;&#xFF0C;&#x5C31;&#x4F1A;&#x653E;&#x5165;&#x5230;&#x7F13;&#x5B58;&#x4E2D;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x4E0D;&#x9700;&#x8981;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;</li>
-<li>&#x7F13;&#x5B58;&#xFF1A;&#x6307;&#x7684;&#x5C31;&#x662F;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x6267;&#x884C;&#x540E;&#x6700;&#x7EC8;&#x7684;module.exports&#xFF0C;&#x628A;&#x5176;&#x503C;&#x4FDD;&#x5B58;&#x8D77;&#x6765;</li>
-<li>&#x591A;&#x6B21;&#x83B7;&#x53D6;module.exports&#x7684;&#x503C;&#x53EA;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;</li>
+<li>require的参数只能是字符串</li>
+<li>require函数是我自己来实现，同样有没有必要加载多次<ul>
+<li>seajs中，加载第一次，就会放入到缓存中，接下来不需要读取文件</li>
+<li>缓存：指的就是当前模块执行后最终的module.exports，把其值保存起来</li>
+<li>多次获取module.exports的值只会有一个</li>
 </ul>
 </li>
-<li>&#x5F02;&#x6B65;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x5F0F;<ul>
-<li><code>require.async(&#x6A21;&#x5757;)</code></li>
+<li>异步的调用方式<ul>
+<li><code>require.async(模块)</code></li>
 </ul>
 </li>
 </ul>
-<h4 id="use&#x7684;&#x4F7F;&#x7528;"><a href="#use&#x7684;&#x4F7F;&#x7528;" class="headerlink" title="use&#x7684;&#x4F7F;&#x7528;"></a>use&#x7684;&#x4F7F;&#x7528;</h4><ul>
-<li>seajs.use(&#x6570;&#x7EC4;,&#x56DE;&#x8C03;&#x51FD;&#x6570;)<ul>
-<li>&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x5C31;&#x662F;&#x6570;&#x7EC4;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x8FD4;&#x56DE;&#x503C;</li>
-<li>&#x6A21;&#x5757;&#x52A0;&#x8F7D;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x548C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x987A;&#x5E8F;&#x4E00;&#x5B9A;&#x8981;&#x4E00;&#x81F4;</li>
+<h4 id="use的使用"><a href="#use的使用" class="headerlink" title="use的使用"></a>use的使用</h4><ul>
+<li>seajs.use(数组,回调函数)<ul>
+<li>回调函数的参数就是数组每个模块的返回值</li>
+<li>模块加载的顺序，和回调函数参数的顺序一定要一致</li>
 </ul>
 </li>
-<li>use&#x51FD;&#x6570;&#x662F;&#x5F02;&#x6B65;&#x7684;</li>
+<li>use函数是异步的</li>
 </ul>
-<h4 id="&#x9AD8;&#x7EA7;&#x914D;&#x7F6E;&#xFF08;&#x96BE;&#x70B9;&#xFF0C;&#x4E86;&#x89E3;&#xFF09;"><a href="#&#x9AD8;&#x7EA7;&#x914D;&#x7F6E;&#xFF08;&#x96BE;&#x70B9;&#xFF0C;&#x4E86;&#x89E3;&#xFF09;" class="headerlink" title="&#x9AD8;&#x7EA7;&#x914D;&#x7F6E;&#xFF08;&#x96BE;&#x70B9;&#xFF0C;&#x4E86;&#x89E3;&#xFF09;"></a>&#x9AD8;&#x7EA7;&#x914D;&#x7F6E;&#xFF08;&#x96BE;&#x70B9;&#xFF0C;&#x4E86;&#x89E3;&#xFF09;</h4><pre><code>seajs.config({
-    base: &quot;../sea-modules/&quot;, //&#x57FA;&#x7840;&#x76EE;&#x5F55;
-    alias: {  //&#x8BBE;&#x7F6E;&#x522B;&#x540D;
+<h4 id="高级配置（难点，了解）"><a href="#高级配置（难点，了解）" class="headerlink" title="高级配置（难点，了解）"></a>高级配置（难点，了解）</h4><pre><code>seajs.config({
+    base: &quot;../sea-modules/&quot;, //基础目录
+    alias: {  //设置别名
       &quot;jquery&quot;: &quot;jquery/jquery/1.10.1/jquery.js&quot;,
       &quot;jquery-easing&quot;: &quot;jquery/easing/1.3.0/easing.js&quot;
     }
 });
 </code></pre><ul>
-<li>base:&#x5C5E;&#x6027;&#x662F;&#x9876;&#x7EA7;&#x76EE;&#x5F55;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x57FA;&#x7840;&#x76EE;&#x5F55;<ul>
-<li>&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6392;&#x9664;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x548C;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x76F4;&#x63A5;&#x5199;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x6216;&#x8005;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x5C31;ok</li>
+<li>base:属性是顶级目录，也可以理解为基础目录<ul>
+<li>使用的方式，排除绝对路径和相对路径，直接写接下来的文件夹或者文件名，就ok</li>
 </ul>
 </li>
-<li>&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;<ul>
-<li>1: &#x914D;&#x7F6E;&#x662F;&#x4E00;&#x4E2A;&#x5927;&#x5BB6;&#x90FD;&#x4F7F;&#x7528;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x53EA;&#x8981;&#x8BE5;&#x76EE;&#x5F55;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x4FEE;&#x6539;base&#x503C;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x5F15;&#x7528;&#x4E5F;&#x4F1A;&#x6539;&#x53D8;</li>
-<li>2: &#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x4F7F;&#x7528;&#xFF0C;&#x9010;&#x4E2A;&#x4FEE;&#x6539;&#x592A;&#x9EBB;&#x70E6;&#xFF0C;base&#x8DEF;&#x5F84;&#x4FEE;&#x6539;&#xFF0C;&#x505A;&#x8DE8;&#x76D8;&#x7B26;&#x66F4;&#x65B9;&#x4FBF;</li>
-<li>3: &#x89E3;&#x51B3;&#x76EE;&#x5F55;&#x5C42;&#x7EA7;&#x8FC7;&#x6DF1;&#x7684;&#x95EE;&#x9898;</li>
+<li>应用场景：<ul>
+<li>1: 配置是一个大家都使用的目录，只要该目录发生改变，修改base值，其他的引用也会改变</li>
+<li>2: 使用相对路径使用，逐个修改太麻烦，base路径修改，做跨盘符更方便</li>
+<li>3: 解决目录层级过深的问题</li>
 </ul>
 </li>
-<li>base&#x76EE;&#x5F55;&#x9ED8;&#x8BA4;&#x662F;seajs&#x7684;&#x76EE;&#x5F55;</li>
+<li>base目录默认是seajs的目录</li>
 </ul>
-<h4 id="&#x51E0;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x5F3A;&#x8C03;"><a href="#&#x51E0;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x5F3A;&#x8C03;" class="headerlink" title="&#x51E0;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x5F3A;&#x8C03;"></a>&#x51E0;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x5F3A;&#x8C03;</h4><ul>
-<li>base&#x3001;alias&#x3001;paths &#xFF1A;&#x4F7F;&#x7528;&#x53EA;&#x80FD;&#x662F;&#x4EE5;&#x975E;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x548C;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x65E2;: &#x76F4;&#x63A5;&#x5199;&#x540D;&#x79F0; <code>seajs.use(&apos;a&apos;)</code></li>
-<li>&#x5982;&#x679C;&#x662F;<code>seajs.use(&apos;x&apos;);</code> &#x4F18;&#x5148;&#x5339;&#x914D;alias &#x548C; paths,&#x5339;&#x914D;&#x4E0A;&#x4E86;&#x4E0D;&#x5339;&#x914D;base</li>
-<li>alias&#x548C;paths&#x90FD;&#x80FD;&#x4F7F;&#x7528;base</li>
-<li>&#x5728;seajs&#x4E2D;&#x53EB;paths &#x53EA;&#x80FD;&#x5339;&#x914D;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x4F7F;&#x7528;&#x9700;&#x8981;&#x62FC;&#x63A5;</li>
-<li>&#x5728;requirejs&#x4E2D;&#x53EB;paths &#x53EF;&#x4EE5;&#x662F;&#x6587;&#x4EF6;</li>
+<h4 id="几个属性的强调"><a href="#几个属性的强调" class="headerlink" title="几个属性的强调"></a>几个属性的强调</h4><ul>
+<li>base、alias、paths ：使用只能是以非绝对路径和相对路径，既: 直接写名称 <code>seajs.use(&#39;a&#39;)</code></li>
+<li>如果是<code>seajs.use(&#39;x&#39;);</code> 优先匹配alias 和 paths,匹配上了不匹配base</li>
+<li>alias和paths都能使用base</li>
+<li>在seajs中叫paths 只能匹配文件夹，使用需要拼接</li>
+<li>在requirejs中叫paths 可以是文件</li>
 <li>requirejs: base = baseUrl,alias = paths</li>
 </ul>
-<h3 id="requireJS&#x57FA;&#x672C;&#x4F7F;&#x7528;"><a href="#requireJS&#x57FA;&#x672C;&#x4F7F;&#x7528;" class="headerlink" title="requireJS&#x57FA;&#x672C;&#x4F7F;&#x7528;"></a>requireJS&#x57FA;&#x672C;&#x4F7F;&#x7528;</h3><hr>
+<h3 id="requireJS基本使用"><a href="#requireJS基本使用" class="headerlink" title="requireJS基本使用"></a>requireJS基本使用</h3><hr>
 <ul>
-<li><p>&#x914D;&#x7F6E;shim &#xFF1A;&#x57AB;&#x7247;</p>
+<li><p>配置shim ：垫片</p>
 <ul>
-<li>1:&#x914D;&#x7F6E;&#x4E00;&#x4E2A;&#x522B;&#x540D;&#xFF0C;&#x8BE5;&#x522B;&#x540D;&#x6307;&#x5411;&#x5177;&#x4F53;&#x7684;&#x6587;&#x4EF6;</li>
-<li><p>2:&#x5C06;&#x8BE5;&#x522B;&#x540D;&#x8FDB;&#x884C;&#x57AB;&#x7684;&#x64CD;&#x4F5C;,&#x544A;&#x8BC9;requirejs,&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x662F;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x54EA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</p>
-<pre><code>shim:{ &apos;jquery&apos;:{exports:&apos;$&apos;},[&#x57AB;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;] }
+<li>1:配置一个别名，该别名指向具体的文件</li>
+<li><p>2:将该别名进行垫的操作,告诉requirejs,我们需要的是文件中的哪一个对象</p>
+<pre><code>shim:{ &apos;jquery&apos;:{exports:&apos;$&apos;},[垫其他对象] }
 </code></pre></li>
 </ul>
-<p>&#x5176;&#x4ED6;&#x914D;&#x7F6E;&#x4E0E;seajs&#x5DEE;&#x4E0D;&#x591A;</p>
-<p>require&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#xFF1A;<a href="http://requirejs.org/" target="_blank" rel="external">http://requirejs.org/</a></p>
-<p>requirejs&#x5B98;&#x65B9;&#x4E2D;&#x6587;&#x7F51;&#xFF1A;<a href="http://www.requirejs.cn/" target="_blank" rel="external">http://www.requirejs.cn/</a></p>
+<p>其他配置与seajs差不多</p>
+<p>require官方网站：<a href="http://requirejs.org/" target="_blank" rel="external">http://requirejs.org/</a></p>
+<p>requirejs官方中文网：<a href="http://www.requirejs.cn/" target="_blank" rel="external">http://www.requirejs.cn/</a></p>
 </li>
 </ul>
-<h3 id="AMD&#x548C;CMD"><a href="#AMD&#x548C;CMD" class="headerlink" title="AMD&#x548C;CMD"></a>AMD&#x548C;CMD</h3><hr>
-<ul>
-<li>AMD: async module define &#x5F02;&#x6B65;&#x6A21;&#x5757;&#x5B9A;&#x4E49;</li>
-<li>CMD: common module define &#x540C;&#x6B65;&#x6A21;&#x5757;&#x5B9A;&#x4E49;&#xFF08;CMD&#x89C4;&#x8303;&#x662F;&#x7389;&#x4F2F;&#x51FA;&#x7684;&#xFF09;</li>
-<li>&#x90FD;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5F02;&#x6B65;&#x52A0;&#x8F7D; require.async</li>
-<li>&#x4ECE;&#x4EE3;&#x7801;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x770B;&#xFF1A;<ul>
-<li>seajs &#x662F;&#x52A0;&#x8F7D;&#x6EDE;&#x540E;(&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x7528;&#xFF0C;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x52A0;&#x8F7D;)<ul>
-<li>&#x61D2;&#x52A0;&#x8F7D;</li>
-</ul>
-</li>
-<li>requirejs &#x662F;&#x52A0;&#x8F7D;&#x524D;&#x7F6E;(&#x9700;&#x8981;&#x7528;&#x5230;&#x4EC0;&#x4E48;&#xFF0C;&#x63D0;&#x524D;&#x52A0;&#x8F7D;)<ul>
-<li>&#x9884;&#x52A0;&#x8F7D;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>&#x4ECE;&#x5B98;&#x65B9;&#x52A0;&#x8F7D;&#x673A;&#x5236;&#x7684;&#x533A;&#x522B;&#x6765;&#x770B;&#xFF1A;<ul>
-<li>seajs &#x61D2;&#x52A0;&#x8F7D;</li>
-<li>require &#x63D0;&#x524D;&#x52A0;&#x8F7D;</li>
-</ul>
-</li>
-<li>&#x4ECE;&#x6848;&#x4F8B;&#x7684;&#x52A0;&#x8F7D;&#x673A;&#x5236;&#x6765;&#x8BF4;&#xFF1A;<ul>
-<li>seajs&#x662F;&#x968F;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x52A0;&#x8F7D;</li>
-<li>requirejs &#x4F1A;&#x4F18;&#x5148;&#x68C0;&#x67E5;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#xFF0C;&#x7136;&#x540E;&#x5148;&#x52A0;&#x8F7D;&#x4F9D;&#x8D56;</li>
-</ul>
-</li>
-</ul>
-<h3 id="&#x603B;&#x7ED3;&#x4E24;&#x4E2A;&#x6A21;&#x5757;&#x5316;&#x52A0;&#x8F7D;&#x6846;&#x67B6;&#x7684;&#x57FA;&#x672C;&#x6B65;&#x9AA4;"><a href="#&#x603B;&#x7ED3;&#x4E24;&#x4E2A;&#x6A21;&#x5757;&#x5316;&#x52A0;&#x8F7D;&#x6846;&#x67B6;&#x7684;&#x57FA;&#x672C;&#x6B65;&#x9AA4;" class="headerlink" title="&#x603B;&#x7ED3;&#x4E24;&#x4E2A;&#x6A21;&#x5757;&#x5316;&#x52A0;&#x8F7D;&#x6846;&#x67B6;&#x7684;&#x57FA;&#x672C;&#x6B65;&#x9AA4;"></a>&#x603B;&#x7ED3;&#x4E24;&#x4E2A;&#x6A21;&#x5757;&#x5316;&#x52A0;&#x8F7D;&#x6846;&#x67B6;&#x7684;&#x57FA;&#x672C;&#x6B65;&#x9AA4;</h3><hr>
-<ul>
+<h3 id="总结：seajs-与-requirejs"><a href="#总结：seajs-与-requirejs" class="headerlink" title="总结：seajs 与 requirejs"></a>总结：seajs 与 requirejs</h3><hr>
+<h4 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h4><ul>
 <li>seajs <ul>
-<li>&#x6B65;&#x9AA4;&#xFF1A;1:&#x5F15;&#x5305;&#x3001;2:&#x542F;&#x52A8;&#x5E76;&#x6307;&#x5B9A;&#x5165;&#x53E3;&#x6A21;&#x5757;&#x3001;3:&#x5B9A;&#x4E49;&#x6A21;&#x5757;&#x3001;4:&#x5F15;&#x5165;&#x6A21;&#x5757;&#x3001;5&#xFF1A;&#x5BFC;&#x51FA;&#x6A21;&#x5757;<ul>
-<li><code>1:&lt;script src&gt; 2:seajs.use([xxx],&#x56DE;&#x8C03;) 3:define(function(require,exports,module){}) 4:var xxx = require(xxx) 5:module.exports = xxx</code></li>
-<li>exports&#x7528;&#x6765;&#x6302;&#x8F7D;&#x5C5E;&#x6027;&#x7B80;&#x5199;,&#x53EF;&#x4EE5;return</li>
+<li>步骤：1:引包、2:启动并指定入口模块、3:定义模块、4:引入模块、5：导出模块<ul>
+<li><code>1:&lt;script src&gt; 2:seajs.use([xxx],回调) 3:define(function(require,exports,module){}) 4:var xxx = require(xxx) 5:module.exports = xxx</code></li>
+<li>exports用来挂载属性简写,可以return</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>requirejs<ul>
-<li>&#x6B65;&#x9AA4;&#xFF1A;1:&#x5F15;&#x5305;&#x3001;2:&#x542F;&#x52A8;&#x5E76;&#x6307;&#x5B9A;&#x5165;&#x53E3;&#x6A21;&#x5757;&#x3001;3:&#x5B9A;&#x4E49;&#x6A21;&#x5757;&#x3001;4:&#x5F15;&#x5165;&#x6A21;&#x5757;&#x3001;5&#xFF1A;&#x5BFC;&#x51FA;&#x6A21;&#x5757;<ul>
-<li><code>1:..  2:requirejs([],&#x56DE;&#x8C03;) 3: define(id,[&#x4F9D;&#x8D56;],&#x56DE;&#x8C03;(&#x53C2;&#x6570;)) 5:return</code></li>
+<li>步骤：1:引包、2:启动并指定入口模块、3:定义模块、4:引入模块、5：导出模块<ul>
+<li><code>1:..  2:requirejs([],回调) 3: define(id,[依赖],回调(参数)) 5:return</code></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>requirejs&#x4E5F;&#x53EF;&#x4EE5;&#x6309;&#x7167;cmd&#x7684;&#x65B9;&#x5F0F;    </p>
+<li><p>requirejs也可以按照cmd的方式    </p>
 <pre><code>define(function(require,exports,module){})
 </code></pre></li>
-<li><p>&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x95EE;&#x9898;</p>
+<li><p>第三方的问题</p>
 <ul>
-<li>seajs&#x4E2D;&#xFF1A;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x6587;&#x4EF6;&#x5904;&#x7406;amd&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x6A21;&#x62DF;&#x5904;&#x7406;cmd<ul>
-<li><code>if(define typeof === &apos;function&apos; &amp;&amp; define.cmd){ define(function(){return &#x5BF9;&#x8C61;})}</code></li>
+<li>seajs中：找到对应文件处理amd的地方，模拟处理cmd<ul>
+<li><code>if(define typeof === &#39;function&#39; &amp;&amp; define.cmd){ define(function(){return 对象})}</code></li>
 </ul>
 </li>
 <li>requirejs:<ul>
-<li><code>&#x8BBE;&#x7F6E;paths:{jquery:&apos;&#x8DEF;&#x5F84;&apos;}</code> </li>
-<li>&#x57AB;&#x7247; <code>shim:{&apos;jquery&apos;:{exports:&apos;$&apos; dept:&apos;&#x4F9D;&#x8D56;&apos;} }</code></li>
-<li>&#x4F7F;&#x7528; <code>&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x522B;&#x540D;</code></li>
-<li>&#x5728;&#x4F7F;&#x7528;&#x524D;&#x7AEF;&#x6A21;&#x5757;&#x5316;&#x6846;&#x67B6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3A;&#x4E86;&#x5C11;&#x8E29;&#x5751;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;2&#x70B9;&#xFF1A;<ul>
-<li><strong>&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x80FD;&#x7ED9;&#x6570;&#x7EC4;&#x7ED9;&#x6570;&#x7EC4;</strong></li>
-<li><strong>&#x80FD;&#x4E0D;&#x7ED9;.js&#x5C31;&#x4E0D;&#x7ED9;.js</strong></li>
+<li><code>设置paths:{jquery:&#39;路径&#39;}</code> </li>
+<li>垫片 <code>shim:{&#39;jquery&#39;:{exports:&#39;$&#39; dept:&#39;依赖&#39;} }</code></li>
+<li>使用 <code>直接使用别名</code></li>
+<li>在使用前端模块化框架的时候，为了少踩坑，可以考虑2点：<ul>
+<li><strong>启动的时候能给数组给数组</strong></li>
+<li><strong>能不给.js就不给.js</strong></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ul>
+<li>AMD: async module define 异步模块定义</li>
+<li>CMD: common module define 同步模块定义（CMD规范是玉伯出的）</li>
+<li>都可以进行异步加载 require.async</li>
+<li>从代码的角度来看：<ul>
+<li>seajs 是加载滞后(什么时候用，什么时候加载)<ul>
+<li>懒加载</li>
+</ul>
+</li>
+<li>requirejs 是加载前置(需要用到什么，提前加载)<ul>
+<li>预加载</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>从官方加载机制的区别来看：<ul>
+<li>seajs 懒加载</li>
+<li>require 提前加载</li>
+</ul>
+</li>
+<li>从案例的加载机制来说：<ul>
+<li>seajs是随需要的时候加载</li>
+<li>requirejs 会优先检查需要依赖，然后先加载依赖</li>
 </ul>
 </li>
 </ul>
@@ -519,6 +536,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/10/利用n管理node版本-轻松切换node/" rel="prev" title="利用n管理node版本,轻松切换node">
+                利用n管理node版本,轻松切换node <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -588,7 +609,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -627,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#seajs模块化加载框架"><span class="nav-number">1.</span> <span class="nav-text">seajs模块化加载框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5分钟入门"><span class="nav-number">1.1.</span> <span class="nav-text">5分钟入门</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#define"><span class="nav-number">1.2.</span> <span class="nav-text">define</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#require"><span class="nav-number">1.3.</span> <span class="nav-text">require</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#use的使用"><span class="nav-number">1.4.</span> <span class="nav-text">use的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级配置（难点，了解）"><span class="nav-number">1.5.</span> <span class="nav-text">高级配置（难点，了解）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几个属性的强调"><span class="nav-number">1.6.</span> <span class="nav-text">几个属性的强调</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requireJS基本使用"><span class="nav-number">2.</span> <span class="nav-text">requireJS基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AMD和CMD"><span class="nav-number">3.</span> <span class="nav-text">AMD和CMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结两个模块化加载框架的基本步骤"><span class="nav-number">4.</span> <span class="nav-text">总结两个模块化加载框架的基本步骤</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#seajs模块化加载框架"><span class="nav-number">1.</span> <span class="nav-text">seajs模块化加载框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5分钟入门"><span class="nav-number">1.1.</span> <span class="nav-text">5分钟入门</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#define"><span class="nav-number">1.2.</span> <span class="nav-text">define</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#require"><span class="nav-number">1.3.</span> <span class="nav-text">require</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#use的使用"><span class="nav-number">1.4.</span> <span class="nav-text">use的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级配置（难点，了解）"><span class="nav-number">1.5.</span> <span class="nav-text">高级配置（难点，了解）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几个属性的强调"><span class="nav-number">1.6.</span> <span class="nav-text">几个属性的强调</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requireJS基本使用"><span class="nav-number">2.</span> <span class="nav-text">requireJS基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结：seajs-与-requirejs"><span class="nav-number">3.</span> <span class="nav-text">总结：seajs 与 requirejs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本步骤"><span class="nav-number">3.1.</span> <span class="nav-text">基本步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区别"><span class="nav-number">3.2.</span> <span class="nav-text">区别</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -784,6 +805,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
