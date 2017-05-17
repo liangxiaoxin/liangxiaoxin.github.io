@@ -238,6 +238,135 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/17/记录开发常用代码及方法/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="liangxiaoxin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梁小新blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/17/记录开发常用代码及方法/" itemprop="url">
+                  记录开发常用代码及方法
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-17T22:49:57+08:00">
+                2017-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>日常开发，常常有一些方法、正则、表达式经常需要用到，在此记录，作为总结和方便查找。</p>
+<h3 id="函数类"><a href="#函数类" class="headerlink" title="函数类"></a>函数类</h3><h5 id="简单的jQuery-Ajax"><a href="#简单的jQuery-Ajax" class="headerlink" title="简单的jQuery Ajax"></a>简单的jQuery Ajax</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function deleteCompany(companyId,callback) &#123;</div><div class="line">        $.ajax(&#123;</div><div class="line">            type: &apos;POST&apos;,</div><div class="line">            url: &apos;/make/company/deleteCompany&apos;,</div><div class="line">            data: &#123;</div><div class="line">                companyId:companyId</div><div class="line">            &#125;,</div><div class="line">            dataType: &quot;json&quot;,</div><div class="line">            success: function (result) &#123;</div><div class="line">                callback(result);</div><div class="line">            &#125;,</div><div class="line">            error: function () &#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;,</div></pre></td></tr></table></figure>
+<h5 id="毫秒数转日期"><a href="#毫秒数转日期" class="headerlink" title="毫秒数转日期"></a>毫秒数转日期</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">//    创建日期转义</div><div class="line">Date.prototype.format = function (format) &#123;</div><div class="line">    var o = &#123;</div><div class="line">        &quot;M+&quot;: this.getMonth() + 1, // month</div><div class="line">        &quot;d+&quot;: this.getDate(), // day</div><div class="line">        &quot;h+&quot;: this.getHours(), // hour</div><div class="line">        &quot;m+&quot;: this.getMinutes(), // minute</div><div class="line">        &quot;s+&quot;: this.getSeconds(), // second</div><div class="line">        &quot;q+&quot;: Math.floor((this.getMonth() + 3) / 3), // quarter</div><div class="line">        &quot;S&quot;: this.getMilliseconds()</div><div class="line">        // millisecond</div><div class="line">    &#125;</div><div class="line">    if (/(y+)/.test(format))</div><div class="line">        format = format.replace(RegExp.$1, (this.getFullYear() + &quot;&quot;)</div><div class="line">            .substr(4 - RegExp.$1.length));</div><div class="line">    for (var k in o)</div><div class="line">        if (new RegExp(&quot;(&quot; + k + &quot;)&quot;).test(format))</div><div class="line">            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : (&quot;00&quot; + o[k]).substr((&quot;&quot; + o[k]).length));</div><div class="line">    return format;</div><div class="line">&#125;</div><div class="line">function formatDatebox(value) &#123;</div><div class="line">    if (value == null || value == &apos;&apos;) &#123;</div><div class="line">        return &apos;&apos;;</div><div class="line">    &#125;</div><div class="line">    var dt;</div><div class="line">    if (value instanceof Date) &#123;</div><div class="line">        dt = value;</div><div class="line">    &#125; else &#123;</div><div class="line">        dt = new Date(value);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return dt.format(&quot;yyyy-MM-dd&quot;); //扩展的Date的format方法(上述插件实现)</div><div class="line">&#125;</div><div class="line">//用法</div><div class="line">formatDatebox(毫秒数);</div></pre></td></tr></table></figure>
+<h5 id="拿到URL地址参数"><a href="#拿到URL地址参数" class="headerlink" title="拿到URL地址参数"></a>拿到URL地址参数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 拿到地址栏的参数 name为参数的名字</div><div class="line">function getUrlParam(name)</div><div class="line">&#123;</div><div class="line">    var reg = new RegExp(&quot;(^|&amp;)&quot;+ name +&quot;=([^&amp;]*)(&amp;|$)&quot;); //构造一个含有目标参数的正则表达式对象</div><div class="line">    var r = window.location.search.substr(1).match(reg);  //匹配目标参数</div><div class="line">    if (r!=null) return unescape(r[2]); return null; //返回参数值</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="普通手机正则验证"><a href="#普通手机正则验证" class="headerlink" title="普通手机正则验证"></a>普通手机正则验证</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function checkPhone()&#123; </div><div class="line">    var phone = document.getElementById(&apos;phone&apos;).value;</div><div class="line">    if(!(/^1[34578]\d&#123;9&#125;$/.test(phone)))&#123; </div><div class="line">        alert(&quot;手机号码有误，请重填&quot;);  </div><div class="line">        return false; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h5 id="js加减乘除出现多位小数点-例如：0-1-0-2-！-0-3-0-30000000000000004"><a href="#js加减乘除出现多位小数点-例如：0-1-0-2-！-0-3-0-30000000000000004" class="headerlink" title="js加减乘除出现多位小数点 例如：0.1+0.2 ！== 0.3  0.30000000000000004"></a>js加减乘除出现多位小数点 例如：0.1+0.2 ！== 0.3  0.30000000000000004</h5><blockquote>
+<p>参考网址</p>
+</blockquote>
+<p><a href="http://madscript.com/javascript/javscript-float-number-compute-problem/" target="_blank" rel="external">http://madscript.com/javascript/javscript-float-number-compute-problem/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//        因为小数点相加会出现误差</div><div class="line">var count = parseFloat((0.1+0.2).toFixed(10));  // count = 0.3</div></pre></td></tr></table></figure>
+<h5 id="如何选中select选中的option"><a href="#如何选中select选中的option" class="headerlink" title="如何选中select选中的option"></a>如何选中select选中的option</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var companyName = $(&apos;#companyNameList&apos;).find(&quot;option:selected&quot;).text();</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/17/解决图片验证码点击刷新问题/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1852,276 +1981,6 @@ d3.date.getMonth(); //9 获取月份数，0-11，
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/13/HTML-CSS重点总结/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="liangxiaoxin">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="梁小新blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/13/HTML-CSS重点总结/" itemprop="url">
-                  HTML+CSS重点总结
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-13T22:07:21+08:00">
-                2016-09-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="元素的分类"><a href="#元素的分类" class="headerlink" title="元素的分类"></a>元素的分类</h3><ul>
-<li>行内元素( inline ):a b  strong del em ins span</li>
-<li>行内块级元素( inline-block ):input button img textarea</li>
-<li>块级元素( block ):div ul li dl dd dt ol </li>
-</ul>
-<h3 id="标签的语义化理解"><a href="#标签的语义化理解" class="headerlink" title="标签的语义化理解"></a>标签的语义化理解</h3><ul>
-<li>（关键）合适的地方使用合适的标签 </li>
-<li>对SEO的好处（讨好网络爬虫）</li>
-<li>提升用户体验 </li>
-<li>方便代码的维护和修改 </li>
-</ul>
-<h3 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h3><ul>
-<li>页面的语义化 </li>
-<li>meta和title标签的对页面的描述 </li>
-<li>广发外链 </li>
-<li>将动态页面静态化（有助于网络爬虫）</li>
-</ul>
-<h3 id="各种居中"><a href="#各种居中" class="headerlink" title="各种居中"></a>各种居中</h3><h5 id="1-水平居中"><a href="#1-水平居中" class="headerlink" title="1.水平居中"></a>1.水平居中</h5><ul>
-<li>行内元素：父元素设置  text-align:center;（注意：不能直接在行内元素上设置，没效果）</li>
-<li>行内块级元素：父元素设置 text-align:center;</li>
-<li>块级元素：该元素上设置 margin:0 auto; </li>
-<li>绝对定位元素在父盒子上水平居中：left:50%(父盒子宽度的一半);margin-left:负的子盒子宽度的一半；</li>
-</ul>
-<h5 id="2-垂直居中"><a href="#2-垂直居中" class="headerlink" title="2.垂直居中"></a>2.垂直居中</h5><ul>
-<li>inline: 父元素上设置 line-height:父元素高度 ；（可直接在inline元素上设置该属性）</li>
-<li>inline-block:1.在该元素设置 position:relative; top:父元素高度的一半; 2.margin-top:负的该元素高度的一半;</li>
-<li>block: 1.在该元素设置 position:relative; top:父元素高度的一半; 2.margin-top:负的该元素高度的一半;（理解：先移离中间的下一点，再上来一点点，居中，OK）</li>
-<li>左边图片，右边文字（此时图片与文字的基线对齐）：文字设置<code>vertical:middle;</code>可与图片居中对齐. </li>
-</ul>
-<h3 id="各种隐藏"><a href="#各种隐藏" class="headerlink" title="各种隐藏"></a>各种隐藏</h3><ul>
-<li>overflow:hidden; 把在容器超出的部分隐藏掉；</li>
-<li>visibility:hidden; 可视化隐藏，在页面上会保留原来的位置（隐身の术，但在页面上占据位置）</li>
-<li><code>display:none;</code> 完全隐藏，在页面上不占据位置（完全消失）</li>
-</ul>
-<h4 id="特殊现象"><a href="#特殊现象" class="headerlink" title="特殊现象"></a>特殊现象</h4><h6 id="1-margin的合并现象"><a href="#1-margin的合并现象" class="headerlink" title="1.margin的合并现象"></a>1.margin的合并现象</h6><pre><code>页面上两个div，一上一下，上面div1设置margin-bottom:200px; 下面div2设置margin-top:100px;则两个div 在垂直方向上的margin 为 200px;（谁大谁说话） 
-</code></pre><h6 id="2-margin的塌陷现象"><a href="#2-margin的塌陷现象" class="headerlink" title="2.margin的塌陷现象"></a>2.margin的塌陷现象</h6><pre><code>父盒子包着一个子盒子，子盒子设置margin-top:50px;则父盒子跟着子盒子一起掉下去； 
-</code></pre><p><strong>解决方法：</strong> </p>
-<ol>
-<li>给父盒子添加一个上边框（边框）</li>
-<li>父盒子设置 overflow:hidden;</li>
-<li>浮动也可以 </li>
-</ol>
-<h6 id="3-padding特殊现象"><a href="#3-padding特殊现象" class="headerlink" title="3.padding特殊现象"></a>3.padding特殊现象</h6><pre><code>如果大盒子里面有一个小盒子，小盒子没有设置宽度，那么将来小盒子内容的宽高默认跟大盒子一样，但是这个时候会给小盒子设置一个padding-left，padding-right，那么将来小盒子的大小不会改变，但是内容会变小
-</code></pre><h6 id="4-空格合并现象"><a href="#4-空格合并现象" class="headerlink" title="4.空格合并现象"></a>4.空格合并现象</h6><pre><code>编写HTML代码时，换行、多个空格、tab等，在页面上只会显示一个空格
-</code></pre><h3 id="属性的连写规则"><a href="#属性的连写规则" class="headerlink" title="属性的连写规则"></a>属性的连写规则</h3><ul>
-<li>font: font-style font-weight  font-size<code>/line-height</code> font-family ;</li>
-<li>background: background-color background-image background-repeat background-position ;</li>
-<li>margin:10px 5px; 上下10px   左右5px</li>
-<li>margin :10px 5px 7px; 上10px 左右5px  下7px</li>
-<li>margin:5px 3px 4px 9px; 上 右  下  左（顺时针trbl） </li>
-</ul>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
-<li>text-  line-  font-  系列开头属性都可以继承 </li>
-<li>color 可继承</li>
-<li>a标签颜色不能继承（浏览器有默认设置）</li>
-<li>h系列大小不能继承（浏览器有默认设置）</li>
-<li>盒子 width  height 不能叫继承 （no）</li>
-</ul>
-<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><ul>
-<li><strong>a 链接 :</strong>  <code>l</code>ink <code>v</code>isited <code>h</code>over(常用) <code>a</code>ctive </li>
-<li><strong>:focus</strong> :input type=text 获取焦点时  a链接也可用</li>
-<li><strong>:first-child</strong> : 选择器   h3:first-child →匹配同辈的所有元素中，第一个元素并且是 h3 的元素。</li>
-<li><strong>:after</strong> 给元素的后面添加内容  （常用于伪类浮动）</li>
-</ul>
-<h3 id="CSS选择器的种类"><a href="#CSS选择器的种类" class="headerlink" title="CSS选择器的种类"></a>CSS选择器的种类</h3><ul>
-<li><strong>!important:</strong> </li>
-<li><strong>行内:</strong> 不用</li>
-<li><strong>ID选择器:</strong> 唯一性 #ID{}</li>
-<li><strong>类选择器:</strong> 可多个，可重复使用  .className {}</li>
-<li><strong>伪类选择器:</strong> 满足特定条件，完成某个动作  :hover{}</li>
-<li><strong>标签选择器:</strong> p{} div{} span{} </li>
-<li><strong>通用选择器</strong> *{ } 用于CSS初始化 </li>
-<li><strong>继承</strong> </li>
-<li><strong>并集选择器</strong></li>
-<li><strong>后代选择器</strong>  .sss p → .sss 下面的所有元素p → 孙子代也会选中</li>
-<li><strong>子代选择器</strong>  .sss&gt;p → .sss下面的所有子元素p  → 孙子代没有选中</li>
-</ul>
-<h3 id="定位的比较"><a href="#定位的比较" class="headerlink" title="定位的比较"></a>定位的比较</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">position  定位名</th>
-<th style="text-align:center">static</th>
-<th style="text-align:center">relative</th>
-<th style="text-align:center">absolute</th>
-<th style="text-align:center">fixed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">是否脱标</td>
-<td style="text-align:center">默认定位</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">是</td>
-</tr>
-<tr>
-<td style="text-align:center">是否覆盖在标上</td>
-<td style="text-align:center">否</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">是</td>
-</tr>
-<tr>
-<td style="text-align:center">是否改变显示方式</td>
-<td style="text-align:center">否</td>
-<td style="text-align:center">否</td>
-<td style="text-align:center">是，inline-block</td>
-<td style="text-align:center">是，inline-block</td>
-</tr>
-<tr>
-<td style="text-align:center">定位的位置（基点）</td>
-<td style="text-align:center">否</td>
-<td style="text-align:center">自己的顶点</td>
-<td style="text-align:center">1.没有父盒子→body顶点 2.父盒子没定位→body顶点  3.父盒子有定位→父盒子顶点</td>
-<td style="text-align:center">body顶点</td>
-</tr>
-</tbody>
-</table>
-<p><strong>应用：</strong>子绝父相</p>
-<h3 id="css初始化"><a href="#css初始化" class="headerlink" title="css初始化"></a>css初始化</h3><ul>
-<li>*{ padding: 0;margin :0; }</li>
-<li>input button { borader: 0; } </li>
-<li>浮动 .fl{ float: left; }   .fr{ float: right; } </li>
-<li>清除浮动 .clearfix{content: “”; height: 0; line-hehight: 0; display: block; visibility: hidden; clear: both;} </li>
-<li>布局时，看看页面大概有哪些公用样式 </li>
-</ul>
-<h3 id="logo的处理"><a href="#logo的处理" class="headerlink" title="logo的处理"></a>logo的处理</h3><pre><code>为了突出重要性，&lt;h1&gt;&lt;a&gt;此处放对logo的描述&lt;/a&gt;&lt;/h1&gt; 
-a标签设置 text-indent: -10000;（移出浏览器）  
-</code></pre><h3 id="浮动的那些事"><a href="#浮动的那些事" class="headerlink" title="浮动的那些事"></a>浮动的那些事</h3><h5 id="浮动的特点"><a href="#浮动的特点" class="headerlink" title="浮动的特点"></a>浮动的特点</h5><ul>
-<li>float:left; float:right;</li>
-<li>脱离标准流，在页面上不占据位置；</li>
-<li>会改变元素的显示方式 inline-block；</li>
-<li>覆盖在标准流之上；</li>
-</ul>
-<h5 id="浮动注意点"><a href="#浮动注意点" class="headerlink" title="浮动注意点"></a>浮动注意点</h5><ul>
-<li>左右浮动的元素互不干扰 </li>
-<li>浮动过后的元素没有空格 </li>
-<li>文本会给浮动以后的元素“让位” （应用：文字环绕）</li>
-</ul>
-<h5 id="浮动的位置"><a href="#浮动的位置" class="headerlink" title="浮动的位置"></a>浮动的位置</h5><ul>
-<li>如果元素A浮动，它的上一个元素B没有浮动，那么将来A会显示在B的下方 </li>
-<li>如果元素A浮动它的上一个元素B也浮动，那么将来A会显示在B的后边（屏幕的宽度足够同时显示两个元素）</li>
-</ul>
-<h5 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h5><ul>
-<li>父盒子之间添加一个空的div  .clearfix{clear:both;}(不推荐用，给页面添加了更多的标签) </li>
-<li>给父盒子设置 overflow:hidden;（不推荐用，缺点：会使页面中的某些区域显示不完整） </li>
-<li>给父盒子添加一个伪类元素，(最常用) .clearfix{content: “”; height: 0; line-hehight: 0; display: block; visibility: hidden; clear: both;}  兼容IE6 .clear{ zoom:1; }</li>
-</ul>
-<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><h5 id="css选择器优先级"><a href="#css选择器优先级" class="headerlink" title="css选择器优先级"></a>css选择器优先级</h5><p>!important &gt; 行内 &gt; ID选择器 &gt; 伪类选择器 &gt; 类选择器 &gt; 标签选择器 &gt; 通用选择器 &gt;继承 </p>
-<h5 id="层级优先级"><a href="#层级优先级" class="headerlink" title="层级优先级"></a>层级优先级</h5><p>z-index: ; </p>
-<p>定位 &gt; 浮动 &gt; 标准流 </p>
-<p><em>magin,和padding在行内元素的上下设置是不起作用的，但是左右不受影响</em></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2169,7 +2028,7 @@ a标签设置 text-indent: -10000;（移出浏览器）
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
