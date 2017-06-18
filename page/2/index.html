@@ -238,6 +238,181 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/25/Javascript中注意之处/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="liangxiaoxin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梁小新blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/25/Javascript中注意之处/" itemprop="url">
+                  Javascript中注意之处
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-25T21:19:04+08:00">
+                2016-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="记录一些学习Javasrcipt中要注意的地方"><a href="#记录一些学习Javasrcipt中要注意的地方" class="headerlink" title="记录一些学习Javasrcipt中要注意的地方"></a>记录一些学习Javasrcipt中要注意的地方</h2><h4 id="关于NAN"><a href="#关于NAN" class="headerlink" title="关于NAN"></a>关于NAN</h4><p> NaN这个特殊的Number与所有其他值都不相等，包括它自己：</p>
+<pre><code>NaN === NaN; // false
+</code></pre><p>唯一能判断NaN的方法是通过isNaN()函数：</p>
+<pre><code>isNaN(NaN); // true
+</code></pre><h4 id="浮点数的比较"><a href="#浮点数的比较" class="headerlink" title="浮点数的比较"></a>浮点数的比较</h4><pre><code>1 / 3 == (1 - 2 / 3); // false
+1 / 3 === (1 - 2 / 3); // false
+Math.abs(1 / 3 - (1 - 2 / 3)) &lt; 0.0000001; // true
+</code></pre><h4 id="关于空"><a href="#关于空" class="headerlink" title="关于空"></a>关于空</h4><ul>
+<li>0是一个数值； </li>
+<li>‘’表示长度为0的字符串； </li>
+<li>null表示“空”； </li>
+<li>undefined表示值未定义。</li>
+</ul>
+<p>关于最后两者，大多数情况下，我们都应该用null。undefined仅仅在判断函数参数是否传递的情况下有用。</p>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>需要特别注意的是，字符串是不可变的，如果对字符串的某个索引赋值，不会有任何错误，但是，也没有任何效果：</p>
+<pre><code>var s = &apos;Test&apos;;
+s[0] = &apos;X&apos;;
+alert(s); // s仍然为&apos;Test&apos;
+</code></pre><p>JavaScript为字符串提供了一些常用方法，注意，调用这些方法本身不会改变原有字符串的内容，而是返回一个<code>新字符串</code>。</p>
+<p>总结：string有其不可变的原始值。</p>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><h6 id="数组的赋值"><a href="#数组的赋值" class="headerlink" title="数组的赋值"></a>数组的赋值</h6><p>Array可以通过索引把对应的元素修改为新的值，因此，对Array的索引进行赋值会直接修改这个Array：</p>
+<pre><code>var arr = [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;];
+arr[1] = 99;
+arr; // arr现在变为[&apos;A&apos;, 99, &apos;C&apos;]
+</code></pre><p>总结：数组为object，对象中的值是可改变的。 </p>
+<h6 id="数组中的逗号问题"><a href="#数组中的逗号问题" class="headerlink" title="数组中的逗号问题"></a>数组中的逗号问题</h6><p>数组直接量的语法允许有可选的结尾的逗号：</p>
+<pre><code>var arr1 = [1,2,3, ];
+alert(arr1.length);  // 3，而不是4；
+</code></pre><h4 id="左值"><a href="#左值" class="headerlink" title="左值"></a>左值</h4><p>变量、对象属性和数组元素均是左值。</p>
+<p>ECMAScript规范允许内置函数返回一个左值，但自定义函数则不能返回左值。 </p>
+<h4 id="“-”-运算符"><a href="#“-”-运算符" class="headerlink" title="“ + ” 运算符"></a>“ + ” 运算符</h4><p>运算结果是依赖于运算符的运算顺序的，比如：</p>
+<pre><code>1 + true + &quot;string&quot;;  →  &quot;2string&quot;;
+1 + (true + &quot;string&quot;); → &quot;1truestring&quot;
+</code></pre><h4 id="amp-amp-and-短路现象"><a href="#amp-amp-and-短路现象" class="headerlink" title="&amp;&amp; and || 短路现象"></a>&amp;&amp; and || 短路现象</h4><h5 id="amp-amp-逻辑与运算"><a href="#amp-amp-逻辑与运算" class="headerlink" title="&amp;&amp; 逻辑与运算"></a>&amp;&amp; 逻辑与运算</h5><pre><code>var obj = { a:1 };
+var p = null;
+o &amp;&amp; obj.a; // 1: obj 是真值，因此返回值为 obj.a ;
+p &amp;&amp; p.a;  // null: p 是假值，因此将其返回，而并不去计算 p.a，所以没有报错；
+
+例如：
+if(a == b) stop(); //只有在a == b 的时候才调用 stop();
+(a == b) &amp;&amp; stop(); //同上; 
+</code></pre><h5 id="逻辑或运算"><a href="#逻辑或运算" class="headerlink" title="||  逻辑或运算"></a>||  逻辑或运算</h5><p><code>通常喜欢使用逻辑或的短路运算给参数默认值</code></p>
+<pre><code>function getSum(a,b,c){
+        //通常喜欢使用逻辑或的短路运算给参数默认值
+        a = a || 0;
+        b = b || 0;
+        c = c || 0;
+        return a + b + c;
+    }
+console.log(getSum(1,2,3));
+console.log(getSum(1,2)); 
+</code></pre><h4 id="Date-日期对象"><a href="#Date-日期对象" class="headerlink" title="Date 日期对象"></a>Date 日期对象</h4><h6 id="日期的声明"><a href="#日期的声明" class="headerlink" title="日期的声明"></a>日期的声明</h6><pre><code>var d1 = new Date(2016,8,22);  //2016,9,22
+var d2 = new Date(&quot;2016,8,22&quot;); //2016,8,22
+</code></pre><h6 id="获取时间"><a href="#获取时间" class="headerlink" title="获取时间"></a>获取时间</h6><pre><code>var d3 = new Date(&quot;2016,10,15&quot;);
+d3.getDate(); // 获取星期数  0~6
+d3.getDay(); //  获取一个月中的天数 
+d3.date.getMonth(); //9 获取月份数，0-11，
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/13/HTML-CSS重点总结/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -792,7 +967,7 @@ a标签设置 text-indent: -10000;（移出浏览器）
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
