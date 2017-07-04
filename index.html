@@ -238,6 +238,130 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/04/解决微信浏览器location-reload失效/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="liangxiaoxin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梁小新blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/04/解决微信浏览器location-reload失效/" itemprop="url">
+                  解决微信浏览器location.reload失效
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-04T21:26:16+08:00">
+                2017-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在实际开发中，除去a标签跳转，经常会使用window.location.href去跳转页面，这个方法在绝大多数浏览器中都不会存在问题，但在一次项目中，发现在安卓微信浏览器中，调用微信SDK分享成功之后调用<code>window.location.reload()</code>刷新本页面，但并没有生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.location.reload();</div></pre></td></tr></table></figure>
+<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p>href是location对象的一个属性，reload()则是location对象的方法<br>所以对于href，可以为该属性设置新的 URL，使浏览器读取并显示新的 URL 的内容。<br>对于reload()则是重新加载当前文档，如果该方法没有规定参数，或者参数是 false，它就会用 HTTP 头 If-Modified-Since 来检测服务器上的文档是否已改变。如果文档已改变，reload() 会再次下载该文档。如果文档未改变，则该方法将从缓存中装载文档。这与用户单击浏览器的刷新按钮的效果是完全一样的。如果把该方法的参数设置为 true，那么无论文档的最后修改日期是什么，它都会绕过缓存，从服务器上重新下载该文档。这与用户在单击浏览器的刷新按钮时按住 Shift 健的效果是完全一样。</p>
+<p>但对于安卓手机微信中的浏览器，reload只是从缓存中装载文档，所以当你使用该方法，是失效的；</p>
+<p> 建议少用window.reload()，应该使用window.location.href=””来代替。</p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>使用location.href代替reload(),而且在以后的使用中也强烈建议大家使用location.href来进行刷新或者跳转</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.location.href = location.href+&apos;?time=&apos;+((new Date()).getTime());</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/酒品会公众号商城总结/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1821,148 +1945,6 @@ fullscreen(document.documentElement);
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/27/收集优秀前端网站and博客/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="liangxiaoxin">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="梁小新blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/27/收集优秀前端网站and博客/" itemprop="url">
-                  收集优秀前端网站and博客
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-27T20:09:36+08:00">
-                2016-09-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="前端学习论坛网站"><a href="#前端学习论坛网站" class="headerlink" title="前端学习论坛网站"></a>前端学习论坛网站</h3><ul>
-<li><p>github (程序员学习源码必备): <a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></p>
-</li>
-<li><p>Awesomes（统计当前流行热点技术）:<a href="https://www.awesomes.cn/" target="_blank" rel="external">https://www.awesomes.cn/</a></p>
-</li>
-<li><p>前端乱炖:  <a href="http://www.html-js.com/" target="_blank" rel="external">http://www.html-js.com/</a></p>
-</li>
-<li>前端网: <a href="www.qdfuns.com">www.qdfuns.com</a></li>
-</ul>
-<h3 id="前端牛人blog"><a href="#前端牛人blog" class="headerlink" title="前端牛人blog"></a>前端牛人blog</h3><ul>
-<li>阮一峰: <a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="external">http://www.ruanyifeng.com/blog/</a> (个人比较喜欢)</li>
-<li>廖雪峰的官方网站 <a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">http://www.liaoxuefeng.com/</a></li>
-<li>Aaron个人技术博客 <a href="http://www.haorooms.com/" target="_blank" rel="external">http://www.haorooms.com/</a></li>
-</ul>
-<h3 id="前端学习团队blog"><a href="#前端学习团队blog" class="headerlink" title="前端学习团队blog"></a>前端学习团队blog</h3><ul>
-<li>大搜车前端团队博客 <a href="http://f2e.souche.com/blog/" target="_blank" rel="external">http://f2e.souche.com/blog/</a> </li>
-<li>淘宝前端团队(FED) <a href="http://taobaofed.org/" target="_blank" rel="external">http://taobaofed.org/</a> </li>
-</ul>
-<h3 id="hexo-github-建立个人博客教程"><a href="#hexo-github-建立个人博客教程" class="headerlink" title="hexo + github 建立个人博客教程"></a>hexo + github 建立个人博客教程</h3><ul>
-<li><a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">http://www.jianshu.com/p/465830080ea9</a></li>
-</ul>
-<h3 id="前端插件"><a href="#前端插件" class="headerlink" title="前端插件"></a>前端插件</h3><ul>
-<li>wiper中文网 <a href="http://www.swiper.com.cn/" target="_blank" rel="external">http://www.swiper.com.cn/</a>   （一款免费的轮播图插件） </li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2010,7 +1992,7 @@ fullscreen(document.documentElement);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
