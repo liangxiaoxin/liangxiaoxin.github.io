@@ -238,6 +238,161 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/前后端该不该分离？/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="liangxiaoxin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梁小新blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/11/前后端该不该分离？/" itemprop="url">
+                  前后端该不该分离？
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-11T23:33:23+08:00">
+                2017-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="目前前后端不分离开发问题"><a href="#目前前后端不分离开发问题" class="headerlink" title="目前前后端不分离开发问题"></a>目前前后端不分离开发问题</h2><h5 id="前端页面可嵌套java语法"><a href="#前端页面可嵌套java语法" class="headerlink" title="前端页面可嵌套java语法"></a>前端页面可嵌套java语法</h5><p>优点：目前java后台，可以在jsp、html页面嵌套java语法、数据交互，不用采取ajax请求，加快前后端数据交互。</p>
+<p>缺点：数据字段嵌套在前端页面，内容较多时，字段混乱，嵌套java语法降低前端开发后期维护性。</p>
+<h5 id="数据交互，需运行java项目"><a href="#数据交互，需运行java项目" class="headerlink" title="数据交互，需运行java项目"></a>数据交互，需运行java项目</h5><p>优点：方便后台测试接口</p>
+<p>缺点：前端需要搭建后台java环境、后台每出新接口，前端需要重新更新代码编译运行，降低前端开发速度，尤其是当后台编写出错、项目运行不了，需要把报错信息交给后台处理完成后再重新编译运行，前端根本开展不了工作。</p>
+<h5 id="url地址跳转（目前跳转由后端控制）"><a href="#url地址跳转（目前跳转由后端控制）" class="headerlink" title="url地址跳转（目前跳转由后端控制）"></a>url地址跳转（目前跳转由后端控制）</h5><blockquote>
+<p>前端每次新建页面都要先向后台报项目文件目录，后台编写url地址和这个文件的位置作一个映射</p>
+</blockquote>
+<p>优点：后台对url地址可控性更强</p>
+<p>缺点：大大降低前端开发效率</p>
+<h5 id="前端资源的-css、js-引入"><a href="#前端资源的-css、js-引入" class="headerlink" title="前端资源的(css、js)引入"></a>前端资源的(css、js)引入</h5><blockquote>
+<p>目前是采取绝对路径方式引入</p>
+</blockquote>
+<p>优点：</p>
+<p>缺点：正确前端引入资源的方式是相对路径，所以如果后台没有做好url跳转，前端往往连静态页面都编写不了</p>
+<h5 id="前端自动化、css预编译、打包压缩"><a href="#前端自动化、css预编译、打包压缩" class="headerlink" title="前端自动化、css预编译、打包压缩"></a>前端自动化、css预编译、打包压缩</h5><blockquote>
+<p>目前由于没有前后端分离，项目结构嵌套在java项目结构下，前端url、资源的引入前端都无法控制，无法做到基本的前端工程化、前端的打包压缩添加版本号等等；</p>
+</blockquote>
+<p>正确的流程应该是这样的：前端src开发(可采用less等预编译器加快前端开发)→前端dist打包发布</p>
+<p>优点：前端有完整目录结构，结构清晰、前端自动化、后期维护性较好</p>
+<p>缺点：由于没有压缩合并资源等等问题，增加网站资源引入、性能差等问题</p>
+<h2 id="前后端分离最大的优缺点"><a href="#前后端分离最大的优缺点" class="headerlink" title="前后端分离最大的优缺点"></a>前后端分离最大的优缺点</h2><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
+<li><p>前端负责前端页面编写、展示，调用接口，后端负责写接口，各司其职，互不影响</p>
+</li>
+<li><p>目录清晰、后期维护性强；</p>
+</li>
+<li><p>加快前后端开发速度</p>
+</li>
+<li><p>可使用Vue等比较优秀的框架，提高开发速度，加快网站速度</p>
+<p>​</p>
+</li>
+</ol>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
+<li>后端无法测试接口，前端需把接口出现的问题告诉后端，需多增加沟通</li>
+<li>后端可控前端降低</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>目前大部分公司都采取前后端分离的开发模式，前后端各司其职，互不影响，前后端的后期可维护性都更加好。</p>
+<p>以上。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/04/解决微信浏览器location-reload失效/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1805,148 +1960,6 @@ fullscreen(document.documentElement);
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/29/你的命运不是一头骡子/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="liangxiaoxin">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="梁小新blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/29/你的命运不是一头骡子/" itemprop="url">
-                  你的命运不是一头骡子
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-29T15:08:43+08:00">
-                2016-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>（说明：本文原载2016年第24期《财新周刊》）</code> </p>
-<p>我在杭州工作，周末通常去爬山。今年九月，这里将举办盛大的G20峰会。全城都在忙碌地筹备，山路上也不例外。距离西湖最近的一圈山头，都在安装照明设备，准备在夜间亮灯。 </p>
-<p><img src="/2016/09/29/你的命运不是一头骡子/dengzhu.jpg" alt="工人在准备灯"> </p>
-<p>那些灯柱都是铸铁做的，高度六七米，非常沉重。施工队使用骡子，将灯柱从山脚运到峰顶。 </p>
-<p>我在山路上遇过好几次驮运设备的骡子。它们背上两边各绑着一根极重的灯柱，默默地低着头，蹒跚地踩在石阶上。等爬到峰顶，卸下设备以后，又返回山脚，驮运下一批。每头骡子的屁股后面，都跟着一个拿着木棍、看管它的施工人员，防止它走错路。</p>
-<p>有一次，我看见一头骡子缓缓走着，突然停下来，低着头毫无表情地一动不动，不知道是累了还是不想走了。监工见状，立即拿棍子戳它，它茫然地抬起头，又顺从地继续向前走了。</p>
-<p>看到这一幕，我非常感慨。骡子并不知道，为何要把如此重的铁管背到山顶，就是因为主人要求它这么做，就任劳任怨地干了。哪怕有那么一瞬间，它的内心有过一丝抗拒或疑问，主人一施压，它就不再追问了，回到正常的状态，默默地听任摆布。 </p>
-<p><img src="/2016/09/29/你的命运不是一头骡子/bg2016060707.jpg" alt="伤心的骡子"> </p>
-<p><strong>我从这头骡子身上，想到很多人不也是这样，背负重压，被推着前行，却不知为何。他们埋头勤奋工作，努力完成上级交付的每一个任务，别人让你干什么就干什么，却没有思考过这一切到底为了什么。</strong> </p>
-<p>说起来，中国人与骡子真的有很多相似性。一方面，许多人背上的生活压力，不会比那头骡子小多少，尤其是底层民众。另一方面，中国人的勤劳和忍耐能力，更是有过之而无不及。最重要的一点是，骡子只能接受现实，接受命运的安排，人又何尝不是如此呢？ </p>
-<p>不过，骡子是确实没有办法，它不会思考，没有能力抗拒命运的安排。人可以思考，也有行动能力。<code>我感叹的是，那么多人心甘情愿地放弃，这种只有人类才具有的天赋，&quot;自愿&quot;像骡子那样活着，还说&quot;这就是命，能有什么办法呢&quot;，或者&quot;我也不知道啊，除了这个，我还能干什么&quot;。</code> </p>
-<p><img src="/2016/09/29/你的命运不是一头骡子/bg2016061510.jpg" alt="一个人独自前行">  </p>
-<p>读到这里，你也许会说，”哪有你说的那么严重，工作就是为了赚钱。什么接受命运的摆布、放弃思考能力。为了多赚一点钱努力工作，不是很合理吗，跟骡子扯得上关系吗？”</p>
-<p>当然，在生存面前，一切都是合理的。骡子为了生存，必须俯首听命。但是，21世纪的中国青年，生存本身似乎已经不是问题了。在这样一个产能和资本过剩的时代，除了赚钱以外，是不是应该对自己的人生做一些认真的思考，不要让”赚钱”成为思想懒惰的借口。退一步说，就算你像骡子那样活着，真的赚到了很多钱，是否可以就此认定，当一头骡子是正确的事情？ </p>
-<p>说实话，我不太确定。假如有一道填空题，”如果因此可以获得彩票头奖，为什么不<em>__</em>呢？”，在下划线的地方填入”当一头骡子”，似乎逻辑上也说得过去。但从内心里，或者说基于我的偏执，我还是认为这样是不对的。 </p>
-<p>让我举一个实际的例子。我比较熟悉”软件工程师”这个职业，也就是职业程序员。在我看来，这种职业跟骡子有很多相似性，尤其在大公司里。因为大公司有严格的分工，设计师出视觉稿，业务部门提出需求和业务逻辑，产品经理负责项目实施，工程师的职责就是严格按照设计稿，将产品一模一样地实现出来。本质上，这跟骡子背铁管上山，并没有区别。 </p>
-<p>《黑客与画家》的作者保罗•格雷厄姆，做过一个非常好的概括。 </p>
-<pre><code>&quot;......（你）只是一个负责实现领导意志的技术工人，职责就是根据规格说明书写出代码，其实与一个挖水沟的工人是一样的，从这头挖到那头，仅此而已，从事的都是机械性的工作。&quot; 
-</code></pre><p>我不是说这样的流程有什么不对，而是说在这个流程里，人只是充当一种工具。就像骡子只是铁管上山的一种手段，你只是产出代码的一种手段，本身并没有”自由意志”体现在里面。或者说，你身上体现的都是他人的（或资本的）意志，你无法表现出自我。评价骡子的标准是，铁管背得比较多、比较快，评价软件工程师的标准又何尝不是如此呢，都是看是否忠实有效地实现那些外部意志。 </p>
-<p>我见过许多年轻的程序员勤奋工作，从早到晚一刻不停地编码，周末也来加班，努力完成公司的一个个目标，从来不问、甚至不想”这种需求对不对”、”这个功能有没有必要”，更不要说想一想”我的人生规划是什么”。中国的现实也很残酷，公司的哲学就是告诉你做什么，你就做什么，不想做就离开。 </p>
-<p><img src="/2016/09/29/你的命运不是一头骡子/bg2016061509.jpg" alt="山"> </p>
-<p>我可以想象，等到九月盛会召开时，工程完成，山头亮起灯光，与明月共同照映山脚下的西湖，平湖如镜，游人泛舟，夏夜凉风吹拂，何等的美景美事。骡子参与了这一切的创造过程，但是有谁会记得它们呢，它们的宿命就是接着去下一个工程背铁管。 </p>
-<p>骡子只是施工队的工具，跟锄头或者扁担没有本质区别。但你不是他人的工具，你活着不是为了被动地被他人使用，而是应该要有自己的价值。我觉得，人应该过一种有乐趣、有追求、自己做主的生活，而不能像骡子那样被推着走。</p>
-<p><code>（完）</code></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1994,7 +2007,7 @@ fullscreen(document.documentElement);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
