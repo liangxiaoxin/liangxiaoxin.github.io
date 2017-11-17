@@ -238,6 +238,459 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/22/分享几款web本地服务器及搭建/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="liangxiaoxin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梁小新blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/22/分享几款web本地服务器及搭建/" itemprop="url">
+                  分享几款web本地服务器及搭建
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-22T20:12:59+08:00">
+                2016-11-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有时候，在开发某些功能时，需要模拟服务器来展示功能时，这时候我们就需要用到本地服务器来模拟。又或者在开发完成后，我们在发布网站之前都会在本地服务器上运行，测试一下网站的功能和效果的展现,测试完成后再上传到购买的主机空间正式上线使用。</p>
+<p>那么，有什么软件或者什么插件之类的可以模拟本地服务器呢？接下来就介绍几款优秀的web本地服务器。<br>（以下环境基于MAC的OS X下，与Windows配置相差不大）</p>
+<h3 id="XAMPP-WAMPP"><a href="#XAMPP-WAMPP" class="headerlink" title="XAMPP /  WAMPP"></a>XAMPP /  WAMPP</h3><p><code>XAMPP</code> 顾名思义 (Apache+MySQL+PHP+PERL) </p>
+<p>XAMPP是利用Apache服务，能够模拟本地服务器可以取到PHP文件从而获取MySQL文件，就是说可以自己新建PHP后台文件和JSON数据文件，可以模拟一些像利用AJAX请求，向后台拿到数据，完成一个完整的请求。</p>
+<h6 id="下载地址：https-www-apachefriends-org-download-html"><a href="#下载地址：https-www-apachefriends-org-download-html" class="headerlink" title="下载地址：https://www.apachefriends.org/download.html"></a>下载地址：<a href="https://www.apachefriends.org/download.html" target="_blank" rel="external">https://www.apachefriends.org/download.html</a></h6><p><img src="/2016/11/22/分享几款web本地服务器及搭建/XAMPP.png" alt="XAMPP"></p>
+<h6 id="下载完成后可以看到以下的界面，点击star，在浏览器输入-http-localhost-就能看到首页了。"><a href="#下载完成后可以看到以下的界面，点击star，在浏览器输入-http-localhost-就能看到首页了。" class="headerlink" title="下载完成后可以看到以下的界面，点击star，在浏览器输入 http://localhost/ 就能看到首页了。"></a>下载完成后可以看到以下的界面，点击star，在浏览器输入 <a href="http://localhost/" target="_blank" rel="external">http://localhost/</a> 就能看到首页了。</h6><p>XAMPP默认的根目录是/Applications/XAMPP/xamppfiles/htdocs，把文件夹(yourProject)拖到htdocs，在浏览器输入<a href="http://localhost/yourProject，但是这样相当麻烦，这就需要配置根目录了。" target="_blank" rel="external">http://localhost/yourProject，但是这样相当麻烦，这就需要配置根目录了。</a></p>
+<h5 id="配置XAMPP根目录"><a href="#配置XAMPP根目录" class="headerlink" title="配置XAMPP根目录"></a>配置XAMPP根目录</h5><p>在XAMPP软件界面点击Manage Servers → Configure → Open Conf File 点击 YES 进入 httpd.conf文件，<br>command+F 搜索 “docs”，找到 DocumentRoot 和 Directory </p>
+<p><img src="/2016/11/22/分享几款web本地服务器及搭建/xampp1.png" alt="XAMPP1"></p>
+<p>改成自己想要的目录就可以了。</p>
+<p>我的文件夹为<code>/Users/liangyongxin/desktop/mydemo</code></p>
+<p>还有配置主机和站点这里就不多说了。各位可以百度一下。</p>
+<h3 id="http-server"><a href="#http-server" class="headerlink" title="http-server"></a>http-server</h3><p>一款基于Node.js的命令行http服务器，利用node.js开启本地服务，下载前请先自行下载node服务。</p>
+<p>node地址：<a href="https://github.com/nodejs/node" target="_blank" rel="external">https://github.com/nodejs/node</a></p>
+<p>安装方式：<br>​<br>    npm install http-server -g</p>
+<p>启动方法，直接在所在项目文件夹下开启服务：</p>
+<pre><code>http-server -open
+hs -o  //简写也可以
+</code></pre><p>http-server 地址：<a href="https://github.com/indexzero/http-server" target="_blank" rel="external">https://github.com/indexzero/http-server</a>    </p>
+<h3 id="browser-sync"><a href="#browser-sync" class="headerlink" title="browser-sync"></a>browser-sync</h3><p>一款可以让你省时的浏览器同步测试工具，开启服务后，pc端、手机端同步更新，快速查看测试效果。<code>而且是完全免费的。</code></p>
+<p>官方中文网：<a href="http://www.browsersync.cn/" target="_blank" rel="external">http://www.browsersync.cn/</a></p>
+<p>github地址：<a href="https://github.com/BrowserSync/browser-sync" target="_blank" rel="external">https://github.com/BrowserSync/browser-sync</a></p>
+<p>安装方式：<br>​<br>    npm install -g browser-sync</p>
+<p>启动方式，直接在所在项目文件夹下开启服务：</p>
+<pre><code>// --files &quot;路径是相对于运行该命令的项目（目录）&quot; 
+browser-sync start --server --files &quot;dist&quot;
+
+// 监听css文件 
+browser-sync start --server --files &quot;css/*.css&quot;
+// 监听css和html文件 
+browser-sync start --server --files &quot;css/*.css, *.html&quot;
+</code></pre><p>具体监听可查看<a href="http://www.browsersync.cn/" target="_blank" rel="external">官网</a><br>，有详细例子解释。一般监听整个项目文件夹。<br>​    </p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>开启本地服务后，系统会自动生成一个本地地址和一个外网地址</p>
+<p>此时可以使用手机打开外网地址就可查看（可能需要同一wifi下）。</p>
+<p>一般来说，使用以上几个本地服务器就足够了。<br>​    </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/26/分享一些前端开发中常用的JS代码片段/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="liangxiaoxin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梁小新blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/26/分享一些前端开发中常用的JS代码片段/" itemprop="url">
+                  分享一些前端开发中常用的JS代码片段
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-26T20:02:03+08:00">
+                2016-10-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>（转自）</code>  <a href="http://www.mrfront.com/2016/05/05/somecode/" target="_blank" rel="external">阅读原文《分享一些前端开发中最常用的JS代码片段》</a></p>
+<h3 id="常用的一些正则表达式"><a href="#常用的一些正则表达式" class="headerlink" title="常用的一些正则表达式"></a>常用的一些正则表达式</h3><pre><code>//匹配字母、数字、中文字符 
+/^([A-Za-z0-9]|[\u4e00-\u9fa5])*$/ 
+
+//验证邮箱 
+/^\w+@([0-9a-zA-Z]+[.])+[a-z]{2,4}$/ 
+
+//验证手机号 
+/^1[3|5|8|7]\d{9}$/ 
+
+//验证URL 
+/^http:\/\/.+\./
+
+//验证身份证号码 
+/(^\d{15}$)|(^\d{17}([0-9]|X|x)$)/ 
+
+//匹配中文字符的正则表达式 
+/[\u4e00-\u9fa5]/ 
+
+//匹配双字节字符(包括汉字在内) 
+/[^\x00-\xff]/
+</code></pre><h3 id="阻止冒泡"><a href="#阻止冒泡" class="headerlink" title="阻止冒泡"></a>阻止冒泡</h3><pre><code>// 原生js
+document.getElementById(&apos;btn&apos;).addEventListener(&apos;click&apos;, function (event) {
+    event = event || window.event；
+
+    if (event.stopPropagation){
+        // w3c方法 阻止冒泡
+        event.stopPropagation();
+    } else{
+        // ie 阻止冒泡
+        event.cancelBubble = true;
+    }
+}, false);
+
+// jQuery
+$(&apos;#btn&apos;).on(&apos;click&apos;, function (event) {
+event.stopPropagation();
+});
+</code></pre><h3 id="阻止默认行为"><a href="#阻止默认行为" class="headerlink" title="阻止默认行为"></a>阻止默认行为</h3><p>原生js</p>
+<pre><code>document.getElementById(&apos;btn&apos;).addEventListener(&apos;click&apos;, function (event) {
+    event = event || window.event；
+
+    if (event.preventDefault){
+        // w3c方法 阻止默认行为
+        event.preventDefault();
+    } else{
+        // ie 阻止默认行为
+        event.returnValue = false;
+    }
+}, false);
+</code></pre><p>jQuery</p>
+<pre><code>// jQuery
+$(&apos;#btn&apos;).on(&apos;click&apos;, function (event) {
+event.preventDefault();
+});
+</code></pre><h3 id="鼠标滚轮事件"><a href="#鼠标滚轮事件" class="headerlink" title="鼠标滚轮事件"></a>鼠标滚轮事件</h3><pre><code>$(&apos;#content&apos;).on(&quot;mousewheel DOMMouseScroll&quot;, function (event) { 
+    // chrome &amp; ie || // firefox
+    var delta = (event.originalEvent.wheelDelta &amp;&amp; (event.originalEvent.wheelDelta &gt; 0 ? 1 : -1)) || 
+    (event.originalEvent.detail &amp;&amp; (event.originalEvent.detail &gt; 0 ? -1 : 1));  
+
+    if (delta &gt; 0) { 
+        // 向上滚动
+        console.log(&apos;mousewheel top&apos;);
+    } else if (delta &lt; 0) {
+        // 向下滚动
+        console.log(&apos;mousewheel bottom&apos;);
+    } 
+});
+</code></pre><h3 id="检测浏览器是否支持svg"><a href="#检测浏览器是否支持svg" class="headerlink" title="检测浏览器是否支持svg"></a>检测浏览器是否支持svg</h3><pre><code>function isSupportSVG() { 
+    var SVG_NS = &apos;http://www.w3.org/2000/svg&apos;;
+    return !!document.createElementNS &amp;&amp;!!document.createElementNS(SVG_NS, &apos;svg&apos;).createSVGRect; 
+} 
+
+// 测试
+console.log(isSupportSVG());
+</code></pre><h3 id="检测浏览器是否支持canvas"><a href="#检测浏览器是否支持canvas" class="headerlink" title="检测浏览器是否支持canvas"></a>检测浏览器是否支持canvas</h3><pre><code>function isSupportCanvas() {
+    if(document.createElement(&apos;canvas&apos;).getContext){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+// 测试，打开谷歌浏览器控制台查看结果
+console.log(isSupportCanvas());
+</code></pre><h3 id="检测是否是微信浏览器"><a href="#检测是否是微信浏览器" class="headerlink" title="检测是否是微信浏览器"></a>检测是否是微信浏览器</h3><pre><code>function isWeiXinClient() {
+    var ua = navigator.userAgent.toLowerCase(); 
+    if (ua.match(/MicroMessenger/i)==&quot;micromessenger&quot;) { 
+        return true; 
+    } else { 
+        return false; 
+    }
+}
+
+// 测试
+alert(isWeiXinClient());
+</code></pre><h3 id="jQuery-获取鼠标在图片上的坐标"><a href="#jQuery-获取鼠标在图片上的坐标" class="headerlink" title="jQuery 获取鼠标在图片上的坐标"></a>jQuery 获取鼠标在图片上的坐标</h3><pre><code>$(&apos;#myImage&apos;).click(function(event){
+    //获取鼠标在图片上的坐标 
+    console.log(&apos;X：&apos; + event.offsetX+&apos;\n Y:&apos; + event.offsetY); 
+
+    //获取元素相对于页面的坐标 
+    console.log(&apos;X：&apos;+$(this).offset().left+&apos;\n Y:&apos;+$(this).offset().top);
+});
+</code></pre><h3 id="验证码倒计时代码"><a href="#验证码倒计时代码" class="headerlink" title="验证码倒计时代码"></a>验证码倒计时代码</h3><pre><code>&lt;!-- dom --&gt;
+&lt;input id=&quot;send&quot; type=&quot;button&quot; value=&quot;发送验证码&quot;&gt;
+</code></pre><p>原生js版本</p>
+<pre><code>// 原生js版本
+var times = 60, // 临时设为60秒
+timer = null;
+
+document.getElementById(&apos;send&apos;).onclick = function () {
+// 计时开始
+    timer = setInterval(function () {
+        times--;
+
+        if (times &lt;= 0) {
+            send.value = &apos;发送验证码&apos;;
+            clearInterval(timer);
+            send.disabled = false;
+            times = 60;
+        } else {
+            send.value = times + &apos;秒后重试&apos;;
+            send.disabled = true;
+        }
+    }, 1000);
+}
+</code></pre><p>jQuery版本</p>
+<pre><code>// jQuery版本
+var times = 60,
+timer = null;
+
+$(&apos;#send&apos;).on(&apos;click&apos;, function () {
+    var $this = $(this);
+
+    // 计时开始
+    timer = setInterval(function () {
+        times--;
+
+        if (times &lt;= 0) {
+            $this.val(&apos;发送验证码&apos;);
+            clearInterval(timer);
+            $this.attr(&apos;disabled&apos;, false);
+            times = 60;
+        } else {
+            $this.val(times + &apos;秒后重试&apos;);
+            $this.attr(&apos;disabled&apos;, true);
+        }
+    }, 1000);
+});
+</code></pre><h3 id="js判断是否移动端及浏览器内核"><a href="#js判断是否移动端及浏览器内核" class="headerlink" title="js判断是否移动端及浏览器内核"></a>js判断是否移动端及浏览器内核</h3><pre><code>var browser = { 
+    versions: function() { 
+        var u = navigator.userAgent; 
+        return { 
+            trident: u.indexOf(&apos;Trident&apos;) &gt; -1, //IE内核 
+            presto: u.indexOf(&apos;Presto&apos;) &gt; -1, //opera内核 
+            webKit: u.indexOf(&apos;AppleWebKit&apos;) &gt; -1, //苹果、谷歌内核 
+            gecko: u.indexOf(&apos;Firefox&apos;) &gt; -1, //火狐内核Gecko 
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端 
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios 
+            android: u.indexOf(&apos;Android&apos;) &gt; -1 || u.indexOf(&apos;Linux&apos;) &gt; -1, //    android 
+            iPhone: u.indexOf(&apos;iPhone&apos;) &gt; -1 , //iPhone 
+            iPad: u.indexOf(&apos;iPad&apos;) &gt; -1, //iPad 
+            webApp: u.indexOf(&apos;Safari&apos;) &gt; -1 //Safari 
+        }; 
+    }
+} 
+
+if (browser.versions.mobile() || browser.versions.ios() ||     browser.versions.android() || browser.versions.iPhone() ||     browser.versions.iPad()) { 
+    alert(&apos;移动端&apos;); 
+}
+</code></pre><h3 id="HTML5全屏"><a href="#HTML5全屏" class="headerlink" title="HTML5全屏"></a>HTML5全屏</h3><pre><code>function fullscreen(element) {
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+    }
+}
+
+fullscreen(document.documentElement);
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/29/你的命运不是一头骡子/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1251,7 +1704,7 @@ a标签设置 text-indent: -10000;（移出浏览器）
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
