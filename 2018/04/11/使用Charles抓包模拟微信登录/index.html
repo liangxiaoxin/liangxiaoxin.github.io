@@ -84,25 +84,38 @@
 
 
 
-<meta name="description" content="目前前后端不分离开发问题前端页面可嵌套java语法优点：目前java后台，可以在jsp、html页面嵌套java语法、数据交互，不用采取ajax请求，加快前后端数据交互。
-缺点：数据字段嵌套在前端页面，内容较多时，字段混乱，嵌套java语法降低前端开发后期维护性。
-数据交互，需运行java项目优点：方便后台测试接口
-缺点：前端需要搭建后台java环境、后台每出新接口，前端需要重新更新代码编译运行，">
+<meta name="description" content="目前我使用Charles（以下美称小花瓶）主要作的用途：
+简单使用  抓取app，微信小程序，手机端网页等信息
+进阶使用  解决pc端浏览器不能打开微信端需要登录授权的页面
+重点介绍  开发时，可在pc端浏览器模拟微信登录，实现无缝开发
+
+如何使用小花瓶抓取手机端app、小程序、网页信息？原理介绍pc与手机处于同一个Wifi网络，通过手机设置wifi网络的http代理，把服务器地址指向pc的ip">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前后端该不该分离？">
-<meta property="og:url" content="http://yoursite.com/2017/07/11/前后端该不该分离？/index.html">
+<meta property="og:title" content="使用Charles抓包模拟微信登录">
+<meta property="og:url" content="http://yoursite.com/2018/04/11/使用Charles抓包模拟微信登录/index.html">
 <meta property="og:site_name" content="梁小新blog">
-<meta property="og:description" content="目前前后端不分离开发问题前端页面可嵌套java语法优点：目前java后台，可以在jsp、html页面嵌套java语法、数据交互，不用采取ajax请求，加快前后端数据交互。
-缺点：数据字段嵌套在前端页面，内容较多时，字段混乱，嵌套java语法降低前端开发后期维护性。
-数据交互，需运行java项目优点：方便后台测试接口
-缺点：前端需要搭建后台java环境、后台每出新接口，前端需要重新更新代码编译运行，">
-<meta property="og:updated_time" content="2017-07-11T15:34:21.000Z">
+<meta property="og:description" content="目前我使用Charles（以下美称小花瓶）主要作的用途：
+简单使用  抓取app，微信小程序，手机端网页等信息
+进阶使用  解决pc端浏览器不能打开微信端需要登录授权的页面
+重点介绍  开发时，可在pc端浏览器模拟微信登录，实现无缝开发
+
+如何使用小花瓶抓取手机端app、小程序、网页信息？原理介绍pc与手机处于同一个Wifi网络，通过手机设置wifi网络的http代理，把服务器地址指向pc的ip">
+<meta property="og:image" content="http://yoursite.com/2018/04/11/使用Charles抓包模拟微信登录/logo.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/04/11/使用Charles抓包模拟微信登录/SSL-Proxying.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/04/11/使用Charles抓包模拟微信登录/SSL-Result.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/04/11/使用Charles抓包模拟微信登录/add-ssl.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/04/11/使用Charles抓包模拟微信登录/code-result.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/04/11/使用Charles抓包模拟微信登录/xiaoxijiazuo.jpeg">
+<meta property="og:updated_time" content="2018-04-11T11:31:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前后端该不该分离？">
-<meta name="twitter:description" content="目前前后端不分离开发问题前端页面可嵌套java语法优点：目前java后台，可以在jsp、html页面嵌套java语法、数据交互，不用采取ajax请求，加快前后端数据交互。
-缺点：数据字段嵌套在前端页面，内容较多时，字段混乱，嵌套java语法降低前端开发后期维护性。
-数据交互，需运行java项目优点：方便后台测试接口
-缺点：前端需要搭建后台java环境、后台每出新接口，前端需要重新更新代码编译运行，">
+<meta name="twitter:title" content="使用Charles抓包模拟微信登录">
+<meta name="twitter:description" content="目前我使用Charles（以下美称小花瓶）主要作的用途：
+简单使用  抓取app，微信小程序，手机端网页等信息
+进阶使用  解决pc端浏览器不能打开微信端需要登录授权的页面
+重点介绍  开发时，可在pc端浏览器模拟微信登录，实现无缝开发
+
+如何使用小花瓶抓取手机端app、小程序、网页信息？原理介绍pc与手机处于同一个Wifi网络，通过手机设置wifi网络的http代理，把服务器地址指向pc的ip">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/11/使用Charles抓包模拟微信登录/logo.jpg">
 
 
 
@@ -130,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/11/前后端该不该分离？/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/11/使用Charles抓包模拟微信登录/"/>
 
 
 
 
 
-  <title> 前后端该不该分离？ | 梁小新blog </title>
+  <title> 使用Charles抓包模拟微信登录 | 梁小新blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -249,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/前后端该不该分离？/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/使用Charles抓包模拟微信登录/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="liangxiaoxin">
@@ -273,7 +286,7 @@
             
             
               
-                前后端该不该分离？
+                使用Charles抓包模拟微信登录
               
             
           </h2>
@@ -288,8 +301,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-11T23:33:23+08:00">
-                2017-07-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-11T09:58:30+08:00">
+                2018-04-11
               </time>
             
 
@@ -324,43 +337,30 @@
       
 
       
-        <h2 id="目前前后端不分离开发问题"><a href="#目前前后端不分离开发问题" class="headerlink" title="目前前后端不分离开发问题"></a>目前前后端不分离开发问题</h2><h5 id="前端页面可嵌套java语法"><a href="#前端页面可嵌套java语法" class="headerlink" title="前端页面可嵌套java语法"></a>前端页面可嵌套java语法</h5><p>优点：目前java后台，可以在jsp、html页面嵌套java语法、数据交互，不用采取ajax请求，加快前后端数据交互。</p>
-<p>缺点：数据字段嵌套在前端页面，内容较多时，字段混乱，嵌套java语法降低前端开发后期维护性。</p>
-<h5 id="数据交互，需运行java项目"><a href="#数据交互，需运行java项目" class="headerlink" title="数据交互，需运行java项目"></a>数据交互，需运行java项目</h5><p>优点：方便后台测试接口</p>
-<p>缺点：前端需要搭建后台java环境、后台每出新接口，前端需要重新更新代码编译运行，降低前端开发速度，尤其是当后台编写出错、项目运行不了，需要把报错信息交给后台处理完成后再重新编译运行，前端根本开展不了工作。</p>
-<h5 id="url地址跳转（目前跳转由后端控制）"><a href="#url地址跳转（目前跳转由后端控制）" class="headerlink" title="url地址跳转（目前跳转由后端控制）"></a>url地址跳转（目前跳转由后端控制）</h5><blockquote>
-<p>前端每次新建页面都要先向后台报项目文件目录，后台编写url地址和这个文件的位置作一个映射</p>
-</blockquote>
-<p>优点：后台对url地址可控性更强</p>
-<p>缺点：大大降低前端开发效率</p>
-<h5 id="前端资源的-css、js-引入"><a href="#前端资源的-css、js-引入" class="headerlink" title="前端资源的(css、js)引入"></a>前端资源的(css、js)引入</h5><blockquote>
-<p>目前是采取绝对路径方式引入</p>
-</blockquote>
-<p>优点：</p>
-<p>缺点：正确前端引入资源的方式是相对路径，所以如果后台没有做好url跳转，前端往往连静态页面都编写不了</p>
-<h5 id="前端自动化、css预编译、打包压缩"><a href="#前端自动化、css预编译、打包压缩" class="headerlink" title="前端自动化、css预编译、打包压缩"></a>前端自动化、css预编译、打包压缩</h5><blockquote>
-<p>目前由于没有前后端分离，项目结构嵌套在java项目结构下，前端url、资源的引入前端都无法控制，无法做到基本的前端工程化、前端的打包压缩添加版本号等等；</p>
-</blockquote>
-<p>正确的流程应该是这样的：前端src开发(可采用less等预编译器加快前端开发)→前端dist打包发布</p>
-<p>优点：前端有完整目录结构，结构清晰、前端自动化、后期维护性较好</p>
-<p>缺点：由于没有压缩合并资源等等问题，增加网站资源引入、性能差等问题</p>
-<h2 id="前后端分离最大的优缺点"><a href="#前后端分离最大的优缺点" class="headerlink" title="前后端分离最大的优缺点"></a>前后端分离最大的优缺点</h2><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
-<li><p>前端负责前端页面编写、展示，调用接口，后端负责写接口，各司其职，互不影响</p>
-</li>
-<li><p>目录清晰、后期维护性强；</p>
-</li>
-<li><p>加快前后端开发速度</p>
-</li>
-<li><p>可使用Vue等比较优秀的框架，提高开发速度，加快网站速度</p>
-<p>​</p>
-</li>
+        <p><img src="/2018/04/11/使用Charles抓包模拟微信登录/logo.jpg" alt="logo"></p>
+<h4 id="目前我使用Charles（以下美称小花瓶）主要作的用途："><a href="#目前我使用Charles（以下美称小花瓶）主要作的用途：" class="headerlink" title="目前我使用Charles（以下美称小花瓶）主要作的用途："></a>目前我使用Charles（以下美称小花瓶）主要作的用途：</h4><ol>
+<li><code>简单使用</code>  抓取app，微信小程序，手机端网页等信息</li>
+<li><code>进阶使用</code>  解决pc端浏览器不能打开微信端需要登录授权的页面</li>
+<li><code>重点介绍</code>  开发时，可在pc端浏览器模拟微信登录，实现无缝开发</li>
 </ol>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
-<li>后端无法测试接口，前端需把接口出现的问题告诉后端，需多增加沟通</li>
-<li>后端可控前端降低</li>
-</ol>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>目前大部分公司都采取前后端分离的开发模式，前后端各司其职，互不影响，前后端的后期可维护性都更加好。</p>
-<p>以上。</p>
+<h4 id="如何使用小花瓶抓取手机端app、小程序、网页信息？"><a href="#如何使用小花瓶抓取手机端app、小程序、网页信息？" class="headerlink" title="如何使用小花瓶抓取手机端app、小程序、网页信息？"></a>如何使用小花瓶抓取手机端app、小程序、网页信息？</h4><h5 id="原理介绍"><a href="#原理介绍" class="headerlink" title="原理介绍"></a>原理介绍</h5><p>pc与手机处于同一个Wifi网络，通过手机设置wifi网络的http代理，把服务器地址指向pc的ip地址。</p>
+<h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>配置教程不再阐述，配置教程：<a href="https://juejin.im/post/5a420adff265da432c241adc" target="_blank" rel="external">https://juejin.im/post/5a420adff265da432c241adc</a></p>
+<p>配置成功后，此时，在手机端打开任一app或者网页，都会在小花瓶中看到有站点信息，但不能查看其详细信息，需要设置一下。</p>
+<p><img src="/2018/04/11/使用Charles抓包模拟微信登录/SSL-Proxying.jpeg" alt="logo"></p>
+<p>配置你要抓取的网站：要在Proxy==&gt;SSL Proxy Settings 下添加你要抓的网站host，这样就能看到该网站下的网络接口信息，没有添加的不能显示详细信息</p>
+<p>结果：设置过的网站就能看到，其余为 unknow</p>
+<p><img src="/2018/04/11/使用Charles抓包模拟微信登录/SSL-Result.jpeg" alt="SSL-Result"></p>
+<h4 id="如何使用小花瓶在pc浏览器中打开微信端需要登录授权的页面？"><a href="#如何使用小花瓶在pc浏览器中打开微信端需要登录授权的页面？" class="headerlink" title="如何使用小花瓶在pc浏览器中打开微信端需要登录授权的页面？"></a>如何使用小花瓶在pc浏览器中打开微信端需要登录授权的页面？</h4><p>例子：<a href="https://www.homemadecake.cn/sp/order/history" target="_blank" rel="external">https://www.homemadecake.cn/sp/order/history</a></p>
+<h5 id="步骤一：增加一条SSL-Proxying"><a href="#步骤一：增加一条SSL-Proxying" class="headerlink" title="步骤一：增加一条SSL Proxying"></a>步骤一：增加一条SSL Proxying</h5><p><img src="/2018/04/11/使用Charles抓包模拟微信登录/add-ssl.jpeg" alt="add-proxying"></p>
+<h5 id="步骤二：用手机打开这条链接"><a href="#步骤二：用手机打开这条链接" class="headerlink" title="步骤二：用手机打开这条链接"></a>步骤二：用手机打开这条链接</h5><p><img src="/2018/04/11/使用Charles抓包模拟微信登录/code-result.jpeg" alt="proxy-result"></p>
+<p>从小花瓶中可以看到，整个微信登录授权的跳转过程：</p>
+<ul>
+<li>进入页面 <a href="https://www.homemadecake.cn/sp/order/history" target="_blank" rel="external">https://www.homemadecake.cn/sp/order/history</a></li>
+<li>用户同意授权，获取code  <a href="https://www.homemadecake.cn/sp/weixin/openid?url=https%3A%2F%2Fwww.homemadecake.cn%2Fsp%2Forder%2Fhistory" target="_blank" rel="external">https://www.homemadecake.cn/sp/weixin/openid?url=https%3A%2F%2Fwww.homemadecake.cn%2Fsp%2Forder%2Fhistory</a></li>
+<li>最后返回 <a href="https://www.homemadecake.cn/sp/order/history?openid=XXX" target="_blank" rel="external">https://www.homemadecake.cn/sp/order/history?openid=XXX</a>  此时服务器已经拿到该用户的信息。</li>
+</ul>
+<h5 id="步骤三：直接在浏览器中打开这个链接-与手机中显示的一毛一样，完成。（侵删）"><a href="#步骤三：直接在浏览器中打开这个链接-与手机中显示的一毛一样，完成。（侵删）" class="headerlink" title="步骤三：直接在浏览器中打开这个链接 与手机中显示的一毛一样，完成。（侵删）"></a>步骤三：直接在浏览器中打开这个链接 与手机中显示的一毛一样，完成。（侵删）</h5><p><img src="/2018/04/11/使用Charles抓包模拟微信登录/xiaoxijiazuo.jpeg" alt="add-proxying"></p>
+<p>(未完，待更)</p>
 
       
     </div>
@@ -387,8 +387,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/04/解决微信浏览器location-reload失效/" rel="next" title="解决微信浏览器location.reload失效">
-                <i class="fa fa-chevron-left"></i> 解决微信浏览器location.reload失效
+              <a href="/2018/02/06/常用css样式记录/" rel="next" title="常用css样式记录">
+                <i class="fa fa-chevron-left"></i> 常用css样式记录
               </a>
             
           </div>
@@ -396,10 +396,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/23/安利抽奖活动总结/" rel="prev" title="安利抽奖活动总结">
-                安利抽奖活动总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -508,7 +504,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目前前后端不分离开发问题"><span class="nav-number">1.</span> <span class="nav-text">目前前后端不分离开发问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前端页面可嵌套java语法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">前端页面可嵌套java语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据交互，需运行java项目"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">数据交互，需运行java项目</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#url地址跳转（目前跳转由后端控制）"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">url地址跳转（目前跳转由后端控制）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#前端资源的-css、js-引入"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">前端资源的(css、js)引入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#前端自动化、css预编译、打包压缩"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">前端自动化、css预编译、打包压缩</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前后端分离最大的优缺点"><span class="nav-number">2.</span> <span class="nav-text">前后端分离最大的优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">2.0.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点"><span class="nav-number">2.0.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.1.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#目前我使用Charles（以下美称小花瓶）主要作的用途："><span class="nav-number">1.</span> <span class="nav-text">目前我使用Charles（以下美称小花瓶）主要作的用途：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用小花瓶抓取手机端app、小程序、网页信息？"><span class="nav-number">2.</span> <span class="nav-text">如何使用小花瓶抓取手机端app、小程序、网页信息？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#原理介绍"><span class="nav-number">2.1.</span> <span class="nav-text">原理介绍</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置"><span class="nav-number">2.2.</span> <span class="nav-text">配置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用小花瓶在pc浏览器中打开微信端需要登录授权的页面？"><span class="nav-number">3.</span> <span class="nav-text">如何使用小花瓶在pc浏览器中打开微信端需要登录授权的页面？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤一：增加一条SSL-Proxying"><span class="nav-number">3.1.</span> <span class="nav-text">步骤一：增加一条SSL Proxying</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤二：用手机打开这条链接"><span class="nav-number">3.2.</span> <span class="nav-text">步骤二：用手机打开这条链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤三：直接在浏览器中打开这个链接-与手机中显示的一毛一样，完成。（侵删）"><span class="nav-number">3.3.</span> <span class="nav-text">步骤三：直接在浏览器中打开这个链接 与手机中显示的一毛一样，完成。（侵删）</span></a></li></ol></li></ol></div>
             
 
           </div>

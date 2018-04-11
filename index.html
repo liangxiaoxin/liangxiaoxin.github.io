@@ -238,6 +238,268 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/使用Charles抓包模拟微信登录/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="liangxiaoxin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梁小新blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/04/11/使用Charles抓包模拟微信登录/" itemprop="url">
+                  使用Charles抓包模拟微信登录
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-11T09:58:30+08:00">
+                2018-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/2018/04/11/使用Charles抓包模拟微信登录/logo.jpg" alt="logo"></p>
+<h4 id="目前我使用Charles（以下美称小花瓶）主要作的用途："><a href="#目前我使用Charles（以下美称小花瓶）主要作的用途：" class="headerlink" title="目前我使用Charles（以下美称小花瓶）主要作的用途："></a>目前我使用Charles（以下美称小花瓶）主要作的用途：</h4><ol>
+<li><code>简单使用</code>  抓取app，微信小程序，手机端网页等信息</li>
+<li><code>进阶使用</code>  解决pc端浏览器不能打开微信端需要登录授权的页面</li>
+<li><code>重点介绍</code>  开发时，可在pc端浏览器模拟微信登录，实现无缝开发</li>
+</ol>
+<h4 id="如何使用小花瓶抓取手机端app、小程序、网页信息？"><a href="#如何使用小花瓶抓取手机端app、小程序、网页信息？" class="headerlink" title="如何使用小花瓶抓取手机端app、小程序、网页信息？"></a>如何使用小花瓶抓取手机端app、小程序、网页信息？</h4><h5 id="原理介绍"><a href="#原理介绍" class="headerlink" title="原理介绍"></a>原理介绍</h5><p>pc与手机处于同一个Wifi网络，通过手机设置wifi网络的http代理，把服务器地址指向pc的ip地址。</p>
+<h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>配置教程不再阐述，配置教程：<a href="https://juejin.im/post/5a420adff265da432c241adc" target="_blank" rel="external">https://juejin.im/post/5a420adff265da432c241adc</a></p>
+<p>配置成功后，此时，在手机端打开任一app或者网页，都会在小花瓶中看到有站点信息，但不能查看其详细信息，需要设置一下。</p>
+<p><img src="/2018/04/11/使用Charles抓包模拟微信登录/SSL-Proxying.jpeg" alt="logo"></p>
+<p>配置你要抓取的网站：要在Proxy==&gt;SSL Proxy Settings 下添加你要抓的网站host，这样就能看到该网站下的网络接口信息，没有添加的不能显示详细信息</p>
+<p>结果：设置过的网站就能看到，其余为 unknow</p>
+<p><img src="/2018/04/11/使用Charles抓包模拟微信登录/SSL-Result.jpeg" alt="SSL-Result"></p>
+<h4 id="如何使用小花瓶在pc浏览器中打开微信端需要登录授权的页面？"><a href="#如何使用小花瓶在pc浏览器中打开微信端需要登录授权的页面？" class="headerlink" title="如何使用小花瓶在pc浏览器中打开微信端需要登录授权的页面？"></a>如何使用小花瓶在pc浏览器中打开微信端需要登录授权的页面？</h4><p>例子：<a href="https://www.homemadecake.cn/sp/order/history" target="_blank" rel="external">https://www.homemadecake.cn/sp/order/history</a></p>
+<h5 id="步骤一：增加一条SSL-Proxying"><a href="#步骤一：增加一条SSL-Proxying" class="headerlink" title="步骤一：增加一条SSL Proxying"></a>步骤一：增加一条SSL Proxying</h5><p><img src="/2018/04/11/使用Charles抓包模拟微信登录/add-ssl.jpeg" alt="add-proxying"></p>
+<h5 id="步骤二：用手机打开这条链接"><a href="#步骤二：用手机打开这条链接" class="headerlink" title="步骤二：用手机打开这条链接"></a>步骤二：用手机打开这条链接</h5><p><img src="/2018/04/11/使用Charles抓包模拟微信登录/code-result.jpeg" alt="proxy-result"></p>
+<p>从小花瓶中可以看到，整个微信登录授权的跳转过程：</p>
+<ul>
+<li>进入页面 <a href="https://www.homemadecake.cn/sp/order/history" target="_blank" rel="external">https://www.homemadecake.cn/sp/order/history</a></li>
+<li>用户同意授权，获取code  <a href="https://www.homemadecake.cn/sp/weixin/openid?url=https%3A%2F%2Fwww.homemadecake.cn%2Fsp%2Forder%2Fhistory" target="_blank" rel="external">https://www.homemadecake.cn/sp/weixin/openid?url=https%3A%2F%2Fwww.homemadecake.cn%2Fsp%2Forder%2Fhistory</a></li>
+<li>最后返回 <a href="https://www.homemadecake.cn/sp/order/history?openid=XXX" target="_blank" rel="external">https://www.homemadecake.cn/sp/order/history?openid=XXX</a>  此时服务器已经拿到该用户的信息。</li>
+</ul>
+<h5 id="步骤三：直接在浏览器中打开这个链接-与手机中显示的一毛一样，完成。（侵删）"><a href="#步骤三：直接在浏览器中打开这个链接-与手机中显示的一毛一样，完成。（侵删）" class="headerlink" title="步骤三：直接在浏览器中打开这个链接 与手机中显示的一毛一样，完成。（侵删）"></a>步骤三：直接在浏览器中打开这个链接 与手机中显示的一毛一样，完成。（侵删）</h5><p><img src="/2018/04/11/使用Charles抓包模拟微信登录/xiaoxijiazuo.jpeg" alt="add-proxying"></p>
+<p>(未完，待更)</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/06/常用css样式记录/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="liangxiaoxin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梁小新blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/02/06/常用css样式记录/" itemprop="url">
+                  常用css样式记录
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-06T09:49:03+08:00">
+                2018-02-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h5><p><img src="/2018/02/06/常用css样式记录/line.jpg" alt="line"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//html </div><div class="line">&lt;div class=&quot;line-box&quot;&gt;</div><div class="line">  &lt;div class=&quot;line&quot;&gt;&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;text&quot;&gt;购货情况&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;line&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">//css</div><div class="line">.line-box &#123;</div><div class="line">    margin-top: 30px;</div><div class="line">    display: flex;</div><div class="line">    justify-content: space-between;</div><div class="line">    align-items: center;</div><div class="line">  .line &#123;</div><div class="line">    width: 30%;</div><div class="line">    border-top: 1px dashed #79bd30;</div><div class="line">  &#125;</div><div class="line">  .text &#123;</div><div class="line">    color: #79bd30;</div><div class="line">    font-size: 13px;</div><div class="line">    padding: 3px 20px;</div><div class="line">    border: 1px solid #79bd30;</div><div class="line">    border-radius: 8px;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">publishUrl=&quot;ftp://cnws-prod-bjb-001.ftp.chinacloudsites.chinacloudapi.cn/site/wwwroot&quot; ftpPassiveMode=&quot;True&quot;</div><div class="line">userName=&quot;ps4-northchina-fitness-pd&quot;</div><div class="line">userPWD=&quot;k5cLoCvXnWm8YMrzqJhCnk1mEYPvrtquT3z1wjpx4T1Kly5bLMQtK24ZHkPu&quot;</div><div class="line"></div><div class="line">/site/wwwroot/webapps/static</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/25/记录日常Bug及解决方法/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -324,124 +586,9 @@
 <li>别的表单组件没有处于focus状态。</li>
 </ol>
 <h4 id="vue-更新数据中的某一个key不触发视图的更新"><a href="#vue-更新数据中的某一个key不触发视图的更新" class="headerlink" title="vue 更新数据中的某一个key不触发视图的更新"></a>vue 更新数据中的某一个key不触发视图的更新</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">this.$set(data,&apos;key&apos;,value)</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
+<h4 id="document-documentElement-scrollTop-回到顶部失效"><a href="#document-documentElement-scrollTop-回到顶部失效" class="headerlink" title="document.documentElement.scrollTop 回到顶部失效"></a>document.documentElement.scrollTop 回到顶部失效</h4><p>问题：页面上有一个回到顶部按钮，采用fixed布局，z-index:1000，页面上内容页中间有一个导航栏，当页面滚动到导航栏位置时，导航栏采用fixed z-index:1001固定在头部，此时document.documentElement.scrollTop 点击回到顶部失效 </p>
+<p>解决方式: 设置页面上的所有层不可大于回到顶部按钮的层级 &lt;1000</p>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/17/使用Charles进行微信登录api调试/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="liangxiaoxin">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="梁小新blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/12/17/使用Charles进行微信登录api调试/" itemprop="url">
-                  使用Charles进行微信登录api调试
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-17T15:36:09+08:00">
-                2017-12-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
           
         
       
@@ -1404,182 +1551,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/12/vue2-0嵌套路由实现豆瓣电影分页功能/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="liangxiaoxin">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="梁小新blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="梁小新blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/12/vue2-0嵌套路由实现豆瓣电影分页功能/" itemprop="url">
-                  vue2.0嵌套路由实现豆瓣电影分页功能
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-12T21:21:50+08:00">
-                2017-01-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近练习Vue，看到官方文档中的<a href="https://router.vuejs.org/zh-cn/essentials/nested-routes.html" target="_blank" rel="external">嵌套路由</a>，<br>不做不知道，实在是太坑了，网上资料demo少之又少，然后自己就做了一个demo,用了vue2.0嵌套路由实现豆瓣电影分页功能，供大家学习学习，写得不好望见谅。</p>
-<p>官方文档给出的demo：<a href="http://jsfiddle.net/yyx990803/L7hscd8h/" target="_blank" rel="external">http://jsfiddle.net/yyx990803/L7hscd8h/</a></p>
-<h3 id="Demo简单介绍"><a href="#Demo简单介绍" class="headerlink" title="Demo简单介绍"></a>Demo简单介绍</h3><p>主路由：Top250(charts)，正在热映(hot)，即将上映(ing)，新片榜(newmovie)</p>
-<pre><code>const router = new VueRouter({
-    routes: [
-        {
-          path: &apos;/&apos;,   //设置默认路由为Top250
-          component: charts
-        },
-        {
-          path: &apos;/charts&apos;,  //Top250
-          component: charts
-        },
-        {
-          path: &apos;/hot&apos;, 
-          component: hot
-        },
-        {
-          path: &apos;/ing&apos;,
-          component: ing
-        },
-        {
-          path: &apos;/newmovie&apos;,
-          component: newmovie
-        },
-    ]
- }
-</code></pre><p>在top250(charts)上添加了分页功能作为子路由，在配置上添加：</p>
-<pre><code>{
-  path: &apos;/charts/:id&apos;,  //子路由
-  component: charts,
-  children: [
-    {path: &apos;one&apos;, component: ing},
-    {path: &apos;two&apos;, component: newmovie},
-    {path: &apos;three&apos;, component: test}
-    ]
-}
-</code></pre><p>在charts组件上添加入口:</p>
-<pre><code>&lt;router-link to=&quot;/charts/1/one&quot;&gt;1&lt;/router-link&gt;
-&lt;router-link to=&quot;/charts/1/two&quot;&gt;2&lt;/router-link&gt;
-&lt;router-link to=&quot;/charts/1/three&quot;&gt;3&lt;/router-link&gt;
-</code></pre><p>在charts组件上添加出口:</p>
-<pre><code>&lt;router-view&gt;&lt;/router-view&gt;
-</code></pre><h4 id="遇见的坑"><a href="#遇见的坑" class="headerlink" title="遇见的坑"></a>遇见的坑</h4><pre><code>&lt;router-link to=&quot;/charts/1/one&quot;&gt;&lt;/router-link&gt;
-</code></pre><p>一定要加上这个1,对应→path: ‘/charts/:id’中的指定id，缺少id是不行的，官方文档有介绍：<a href="https://router.vuejs.org/zh-cn/essentials/dynamic-matching.html" target="_blank" rel="external">动态路由配置</a></p>
-<p>demo截图：</p>
-<p>分页1：<br><img src="/2017/01/12/vue2-0嵌套路由实现豆瓣电影分页功能/one.png" alt="one"></p>
-<p>分页2：<br><img src="/2017/01/12/vue2-0嵌套路由实现豆瓣电影分页功能/two.png" alt="two"></p>
-<p>分页3：<br><img src="/2017/01/12/vue2-0嵌套路由实现豆瓣电影分页功能/three.png" alt="three"></p>
-<p>跳到正在热映：<br><img src="/2017/01/12/vue2-0嵌套路由实现豆瓣电影分页功能/hot.png" alt="hot"></p>
-<p>demo地址：<a href="https://github.com/liangxiaoxin/doubandemo" target="_blank" rel="external">https://github.com/liangxiaoxin/doubandemo</a></p>
-<p>数据来自<a href="https://developers.douban.com/wiki/?title=movie_v2" target="_blank" rel="external">豆瓣电影API</a>。</p>
-<p>代码写得好烂，凑合着看吧，反正子路由还是成功的啊！哈哈哈</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1622,7 +1598,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

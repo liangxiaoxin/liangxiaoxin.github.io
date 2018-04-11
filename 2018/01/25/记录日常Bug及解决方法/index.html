@@ -100,7 +100,7 @@ vue 更新数">
 别的表单组件没有处于focus状态。
 
 vue 更新数">
-<meta property="og:updated_time" content="2018-01-25T03:22:19.000Z">
+<meta property="og:updated_time" content="2018-04-09T10:22:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录日常Bug及解决方法">
 <meta name="twitter:description" content="iOS中表单获取焦点问题触屏设备上的Safari中focus()有些限制。水果触屏设备的设计师们认为软键盘老是弹出来是很烦人的，用户体验不好。所以他们为表单获焦软键盘弹出设置了以下两个条件：
@@ -336,6 +336,9 @@ vue 更新数">
 <li>别的表单组件没有处于focus状态。</li>
 </ol>
 <h4 id="vue-更新数据中的某一个key不触发视图的更新"><a href="#vue-更新数据中的某一个key不触发视图的更新" class="headerlink" title="vue 更新数据中的某一个key不触发视图的更新"></a>vue 更新数据中的某一个key不触发视图的更新</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">this.$set(data,&apos;key&apos;,value)</div></pre></td></tr></table></figure>
+<h4 id="document-documentElement-scrollTop-回到顶部失效"><a href="#document-documentElement-scrollTop-回到顶部失效" class="headerlink" title="document.documentElement.scrollTop 回到顶部失效"></a>document.documentElement.scrollTop 回到顶部失效</h4><p>问题：页面上有一个回到顶部按钮，采用fixed布局，z-index:1000，页面上内容页中间有一个导航栏，当页面滚动到导航栏位置时，导航栏采用fixed z-index:1001固定在头部，此时document.documentElement.scrollTop 点击回到顶部失效 </p>
+<p>解决方式: 设置页面上的所有层不可大于回到顶部按钮的层级 &lt;1000</p>
+
       
     </div>
 
@@ -361,8 +364,8 @@ vue 更新数">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/17/使用Charles进行微信登录api调试/" rel="next" title="使用Charles进行微信登录api调试">
-                <i class="fa fa-chevron-left"></i> 使用Charles进行微信登录api调试
+              <a href="/2017/11/17/记录常忘代码/" rel="next" title="记录常忘代码">
+                <i class="fa fa-chevron-left"></i> 记录常忘代码
               </a>
             
           </div>
@@ -370,6 +373,10 @@ vue 更新数">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/06/常用css样式记录/" rel="prev" title="常用css样式记录">
+                常用css样式记录 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -439,7 +446,7 @@ vue 更新数">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -478,7 +485,7 @@ vue 更新数">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#iOS中表单获取焦点问题"><span class="nav-number">1.</span> <span class="nav-text">iOS中表单获取焦点问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-更新数据中的某一个key不触发视图的更新"><span class="nav-number">2.</span> <span class="nav-text">vue 更新数据中的某一个key不触发视图的更新</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#iOS中表单获取焦点问题"><span class="nav-number">1.</span> <span class="nav-text">iOS中表单获取焦点问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-更新数据中的某一个key不触发视图的更新"><span class="nav-number">2.</span> <span class="nav-text">vue 更新数据中的某一个key不触发视图的更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#document-documentElement-scrollTop-回到顶部失效"><span class="nav-number">3.</span> <span class="nav-text">document.documentElement.scrollTop 回到顶部失效</span></a></li></ol></div>
             
 
           </div>
